@@ -8,6 +8,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: applied_to_pay {
+    label: "Applied To Pay"
     type: string
     sql: ${TABLE}."APPLIED_TO_PAY" ;;
   }
