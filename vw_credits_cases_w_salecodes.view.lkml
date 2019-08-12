@@ -18,6 +18,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: archive {
+    label: "Credit Note Archive"
     type: string
     sql: ${TABLE}."ARCHIVE" ;;
   }
@@ -28,6 +29,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension_group: closed {
+    label: "Case Closed Date"
     type: time
     timeframes: [
       raw,
@@ -42,11 +44,13 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: cnote_key {
+    label: "Credit Note Number"
     type: number
     sql: ${TABLE}."CNOTE_KEY" ;;
   }
 
   dimension: created_by_id {
+    label: "Case Created By ID"
     type: string
     sql: ${TABLE}."CreatedById" ;;
   }
@@ -66,6 +70,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: createdby_full_name {
+    label: "Created By (Name)"
     type: string
     sql: ${TABLE}."CREATEDBY_FULL_NAME" ;;
   }
@@ -96,6 +101,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: d_desc {
+    label: "Office Code"
     type: string
     sql: ${TABLE}."D_DESC" ;;
   }
@@ -111,16 +117,19 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: f_desc {
+    label: "Customer Tier"
     type: string
     sql: ${TABLE}."F_DESC" ;;
   }
 
   dimension: g_desc {
+    label: "Account Manager"
     type: string
     sql: ${TABLE}."G_DESC" ;;
   }
 
   dimension: h_desc {
+    label: "Credit Controller"
     type: string
     sql: ${TABLE}."H_DESC" ;;
   }
