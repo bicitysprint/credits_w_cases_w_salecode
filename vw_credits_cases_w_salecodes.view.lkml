@@ -217,6 +217,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: origin {
+    label: "Case Origin Type"
     type: string
     sql: ${TABLE}."Origin" ;;
   }
@@ -247,16 +248,19 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: sales_code_f {
+    label: "Customer Tier Code"
     type: string
     sql: ${TABLE}."SALES_CODE_F" ;;
   }
 
   dimension: sales_code_g {
+    label: "Acc Manager Code"
     type: string
     sql: ${TABLE}."SALES_CODE_G" ;;
   }
 
   dimension: sales_code_h {
+    label: "Credit Controller Code"
     type: string
     sql: ${TABLE}."SALES_CODE_H" ;;
   }
@@ -272,6 +276,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: supplied_name {
+    hidden: yes
     type: string
     sql: ${TABLE}."SuppliedName" ;;
   }
