@@ -2,6 +2,7 @@ view: vw_credits_cases_w_salecodes {
   sql_table_name: CC.VW_CREDITS_CASES_W_SALECODES ;;
 
   dimension: amt_1 {
+    label: "Credit VAT"
     type: number
     sql: ${TABLE}."AMT_1" ;;
   }
@@ -41,7 +42,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: cnote_key {
-    type: string
+    type: number
     sql: ${TABLE}."CNOTE_KEY" ;;
   }
 
@@ -84,6 +85,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: credits {
+    label: "Credit Gross Amount"
     type: number
     sql: ${TABLE}."CREDITS" ;;
   }
