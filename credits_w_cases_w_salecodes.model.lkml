@@ -9,3 +9,8 @@ datagroup: credits_w_cases_w_salecodes_default_datagroup {
 }
 
 persist_with: credits_w_cases_w_salecodes_default_datagroup
+
+explore: vw_credits_cases_w_salecodes {
+  persist_with: credits_w_cases_w_salecodes_default_datagroup
+  label: "Credits Cases And Salecodes"
+  }
