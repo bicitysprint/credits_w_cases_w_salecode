@@ -47,7 +47,7 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: cnote_key {
     label: "Credit Note Number"
-    type: number
+    type: string
     sql: ${TABLE}."CNOTE_KEY" ;;
   }
 
@@ -190,12 +190,13 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: last_modified_by_id {
-    label: "Last Modified By ID"
+    label: "Case Last Modified By ID"
     type: string
     sql: ${TABLE}."LastModifiedById" ;;
   }
 
   dimension_group: last_modified {
+    label: "Case Last Modified"
     type: time
     timeframes: [
       raw,
@@ -227,6 +228,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: outstanding_amt {
+    label: "Outstanding Amount"
     type: number
     sql: ${TABLE}."OUTSTANDING_AMT" ;;
   }
