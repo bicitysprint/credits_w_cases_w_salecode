@@ -112,6 +112,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: description {
+    label: "Case Details"
     type: string
     sql: ${TABLE}."Description" ;;
   }
@@ -174,6 +175,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: is_closed {
+    label: "Case Is Closed"
     type: yesno
     sql: ${TABLE}."IsClosed" ;;
   }
