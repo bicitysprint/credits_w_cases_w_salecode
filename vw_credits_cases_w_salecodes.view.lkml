@@ -13,6 +13,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: applied_to_stmt {
+    label: "Applied To Statement"
     type: string
     sql: ${TABLE}."APPLIED_TO_STMT" ;;
   }
@@ -29,7 +30,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension_group: closed {
-    label: "Case Closed Date"
+    label: "Case Closed"
     type: time
     timeframes: [
       raw,
@@ -56,6 +57,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension_group: created {
+    label: "Case Created"
     type: time
     timeframes: [
       raw,
@@ -165,6 +167,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: invoice_number {
+    hidden:  yes
     type: string
     sql: ${TABLE}."INVOICE_NUMBER" ;;
   }
@@ -254,7 +257,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: sales_code_g {
-    label: "Acc Manager Code"
+    label: "Account Manager Code"
     type: string
     sql: ${TABLE}."SALES_CODE_G" ;;
   }
