@@ -101,7 +101,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: d_desc {
-    label: "Office Code"
+    label: "Service Centre"
     type: string
     sql: ${TABLE}."D_DESC" ;;
   }
@@ -186,6 +186,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: last_modified_by_id {
+    label: "Last Modified By ID"
     type: string
     sql: ${TABLE}."LastModifiedById" ;;
   }
@@ -205,6 +206,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: modifiedby_full_name {
+    label: "Modified By Full Name"
     type: string
     sql: ${TABLE}."MODIFIEDBY_FULL_NAME" ;;
   }
