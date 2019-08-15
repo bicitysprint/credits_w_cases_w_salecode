@@ -99,6 +99,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: cs_account_number__c {
+    label: "Customer Account Number"
     type: string
     sql: ${TABLE}."CS_Account_Number__c" ;;
   }
