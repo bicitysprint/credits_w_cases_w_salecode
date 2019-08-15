@@ -3,6 +3,7 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: id {
     primary_key: yes
+    label: "Case ID"
     type: string
     sql: ${TABLE}."Id" ;;
   }
@@ -260,21 +261,25 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: owner_id {
+    label: "Case Owner ID"
     type: string
     sql: ${TABLE}."OwnerId" ;;
   }
 
   dimension: posted_period {
+    label: "Credit Posted Period"
     type: number
     sql: ${TABLE}."POSTED_PERIOD" ;;
   }
 
   dimension: posted_year {
+    label: "Credit Posted Year"
     type: number
     sql: ${TABLE}."POSTED_YEAR" ;;
   }
 
   dimension: reason {
+    label: "Case Reason"
     type: string
     sql: ${TABLE}."Reason" ;;
   }
@@ -316,6 +321,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: subject {
+    label: "Case Subject"
     type: string
     sql: ${TABLE}."Subject" ;;
   }
