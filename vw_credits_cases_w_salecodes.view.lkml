@@ -1,26 +1,28 @@
 view: vw_credits_cases_w_salecodes {
   sql_table_name: CC.VW_CREDITS_CASES_W_SALECODES ;;
 
+  dimension: id {
+    primary_key: yes
+    type: string
+    sql: ${TABLE}."Id" ;;
+  }
+
   dimension: amt_1 {
-    label: "Credit VAT"
     type: number
     sql: ${TABLE}."AMT_1" ;;
   }
 
   dimension: applied_to_pay {
-    label: "Applied To Pay"
     type: string
     sql: ${TABLE}."APPLIED_TO_PAY" ;;
   }
 
   dimension: applied_to_stmt {
-    label: "Applied To Statement"
     type: string
     sql: ${TABLE}."APPLIED_TO_STMT" ;;
   }
 
   dimension: archive {
-    label: "Credit Note Archive"
     type: string
     sql: ${TABLE}."ARCHIVE" ;;
   }
@@ -31,7 +33,6 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension_group: closed {
-    label: "Case Closed"
     type: time
     timeframes: [
       raw,
@@ -46,19 +47,16 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: cnote_key {
-    label: "Credit Note Number"
-    type: string
+    type: number
     sql: ${TABLE}."CNOTE_KEY" ;;
   }
 
   dimension: created_by_id {
-    label: "Case Created By ID"
     type: string
     sql: ${TABLE}."CreatedById" ;;
   }
 
   dimension_group: created {
-    label: "Case Created"
     type: time
     timeframes: [
       raw,
@@ -70,12 +68,6 @@ view: vw_credits_cases_w_salecodes {
       year
     ]
     sql: ${TABLE}."CreatedDate" ;;
-  }
-
-  dimension: createdby_full_name {
-    label: "Created By (Name)"
-    type: string
-    sql: ${TABLE}."CREATEDBY_FULL_NAME" ;;
   }
 
   dimension_group: credit_note {
@@ -93,9 +85,13 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: credits {
-    label: "Credit Gross Amount"
     type: number
     sql: ${TABLE}."CREDITS" ;;
+  }
+
+  dimension: cs_account_number__c {
+    type: string
+    sql: ${TABLE}."CS_Account_Number__c" ;;
   }
 
   dimension: customer_key {
@@ -104,7 +100,6 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: d_desc {
-    label: "Service Centre"
     type: string
     sql: ${TABLE}."D_DESC" ;;
   }
@@ -115,25 +110,21 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: description {
-    label: "Case Details"
     type: string
     sql: ${TABLE}."Description" ;;
   }
 
   dimension: f_desc {
-    label: "Customer Tier"
     type: string
     sql: ${TABLE}."F_DESC" ;;
   }
 
   dimension: g_desc {
-    label: "Account Manager"
     type: string
     sql: ${TABLE}."G_DESC" ;;
   }
 
   dimension: h_desc {
-    label: "Credit Controller"
     type: string
     sql: ${TABLE}."H_DESC" ;;
   }
@@ -168,7 +159,6 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: invoice_number {
-    hidden:  yes
     type: string
     sql: ${TABLE}."INVOICE_NUMBER" ;;
   }
@@ -179,7 +169,6 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: is_closed {
-    label: "Case Is Closed"
     type: yesno
     sql: ${TABLE}."IsClosed" ;;
   }
@@ -190,13 +179,11 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: last_modified_by_id {
-    label: "Case Last Modified By ID"
     type: string
     sql: ${TABLE}."LastModifiedById" ;;
   }
 
   dimension_group: last_modified {
-    label: "Case Last Modified"
     type: time
     timeframes: [
       raw,
@@ -210,10 +197,9 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."LastModifiedDate" ;;
   }
 
-  dimension: modifiedby_full_name {
-    label: "Modified By Full Name"
+  dimension: name {
     type: string
-    sql: ${TABLE}."MODIFIEDBY_FULL_NAME" ;;
+    sql: ${TABLE}."NAME" ;;
   }
 
   dimension: office_code {
@@ -222,20 +208,32 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: origin {
-    label: "Case Origin Type"
     type: string
     sql: ${TABLE}."Origin" ;;
   }
 
-  dimension: outstanding_amt {
-    label: "Outstanding Amount"
-    type: number
-    sql: ${TABLE}."OUTSTANDING_AMT" ;;
+  dimension_group: original_case_createddate {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}."ORIGINAL_CASE_CREATEDDATE" ;;
   }
 
-  dimension: owner_full_name {
+  dimension: original_case_number {
     type: string
-    sql: ${TABLE}."OWNER_FULL_NAME" ;;
+    sql: ${TABLE}."ORIGINAL_CASE_NUMBER" ;;
+  }
+
+  dimension: outstanding_amt {
+    type: number
+    sql: ${TABLE}."OUTSTANDING_AMT" ;;
   }
 
   dimension: owner_id {
@@ -253,22 +251,34 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."POSTED_YEAR" ;;
   }
 
+  dimension: reason {
+    type: string
+    sql: ${TABLE}."Reason" ;;
+  }
+
   dimension: sales_code_f {
-    label: "Customer Tier Code"
     type: string
     sql: ${TABLE}."SALES_CODE_F" ;;
   }
 
   dimension: sales_code_g {
-    label: "Account Manager Code"
     type: string
     sql: ${TABLE}."SALES_CODE_G" ;;
   }
 
   dimension: sales_code_h {
-    label: "Credit Controller Code"
     type: string
     sql: ${TABLE}."SALES_CODE_H" ;;
+  }
+
+  dimension: sic {
+    type: string
+    sql: ${TABLE}."Sic" ;;
+  }
+
+  dimension: sic_desc {
+    type: string
+    sql: ${TABLE}."SicDesc" ;;
   }
 
   dimension: status {
@@ -282,7 +292,6 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: supplied_name {
-    hidden: yes
     type: string
     sql: ${TABLE}."SuppliedName" ;;
   }
@@ -294,6 +303,6 @@ view: vw_credits_cases_w_salecodes {
 
   measure: count {
     type: count
-    drill_fields: [supplied_name, owner_full_name, createdby_full_name, modifiedby_full_name]
+    drill_fields: [id, name, supplied_name]
   }
 }
