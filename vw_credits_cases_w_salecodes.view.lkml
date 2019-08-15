@@ -15,12 +15,14 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: applied_to_pay {
     label: "Applied To Pay"
+    hidden: yes
     type: string
     sql: ${TABLE}."APPLIED_TO_PAY" ;;
   }
 
   dimension: applied_to_stmt {
     label: "Applied To Statement"
+    hidden: yes
     type: string
     sql: ${TABLE}."APPLIED_TO_STMT" ;;
   }
@@ -308,6 +310,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: status {
+    label: "Case Status"
     type: string
     sql: ${TABLE}."Status" ;;
   }
