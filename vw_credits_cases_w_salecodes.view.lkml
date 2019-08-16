@@ -39,6 +39,11 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."CASE_NUMBER" ;;
   }
 
+  dimension: case_owner_full_name {
+    type: string
+    sql: ${TABLE}."CASE_OWNER_FULL_NAME" ;;
+  }
+
   dimension_group: closed {
     label: "Case Closed"
     type: time
@@ -134,6 +139,12 @@ view: vw_credits_cases_w_salecodes {
     label: "Case Details"
     type: string
     sql: ${TABLE}."Description" ;;
+  }
+
+  dimension: e_desc {
+    label: "Sales Person Name"
+    type: string
+    sql: ${TABLE}."E_DESC" ;;
   }
 
   dimension: f_desc {
@@ -291,6 +302,12 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."Reason" ;;
   }
 
+  dimension: sales_code_e {
+    label: "Sales Person Code"
+    type: string
+    sql: ${TABLE}."SALES_CODE_E" ;;
+  }
+
   dimension: sales_code_f {
     label: "Customer Tier Code"
     type: string
@@ -348,6 +365,12 @@ view: vw_credits_cases_w_salecodes {
     type: count
     drill_fields: [cnote_key, sales_code_h]
   }
+
+## measure: count {
+##    type: count
+##    drill_fields: [id, name, supplied_name, case_owner_full_name]
+##  }
+
 
 ##  measure: sum {
 ##    type: sum
