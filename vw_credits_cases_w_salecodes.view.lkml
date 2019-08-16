@@ -348,4 +348,10 @@ view: vw_credits_cases_w_salecodes {
     type: count
     drill_fields: [id, name, supplied_name]
   }
+
+  measure: sum {
+    type: sum
+    drill_fields: [id, name, supplied_name]
+  }
+
 }
