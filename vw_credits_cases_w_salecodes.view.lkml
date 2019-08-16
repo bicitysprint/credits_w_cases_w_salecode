@@ -346,7 +346,7 @@ view: vw_credits_cases_w_salecodes {
 
   measure: count {
     type: count
-    drill_fields: [id, name, supplied_name, cnote_key]
+    drill_fields: [cnote_key]
   }
 
 ##  measure: sum {
