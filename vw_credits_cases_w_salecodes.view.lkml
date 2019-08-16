@@ -45,7 +45,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension_group: closed {
-    label: "Case Closed"
+    label: "Case Closed Date"
     type: time
     timeframes: [
       raw,
