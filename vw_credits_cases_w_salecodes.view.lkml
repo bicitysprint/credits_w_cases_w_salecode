@@ -101,6 +101,13 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."CREDITS" ;;
   }
 
+  dimension: NET_Credit{
+    label: "Credit NET Amount"
+    type: number
+    sql: ${credits} - ${amt_1} ;;
+    value_format_name: gbp
+  }
+
   dimension: cs_account_number__c {
     label: "Customer Account Number"
     type: string
