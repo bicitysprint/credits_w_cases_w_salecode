@@ -1,13 +1,6 @@
 view: vw_credits_cases_w_salecodes {
   sql_table_name: CC.VW_CREDITS_CASES_W_SALECODES ;;
 
-  dimension: id {
-    primary_key: yes
-    label: "Case ID"
-    type: string
-    sql: ${TABLE}."Id" ;;
-  }
-
   dimension: amt_1 {
     label: "Credit VAT"
     type: number
@@ -32,6 +25,11 @@ view: vw_credits_cases_w_salecodes {
     label: "Credit Note Archive"
     type: string
     sql: ${TABLE}."ARCHIVE" ;;
+  }
+
+  dimension: case_id {
+    type: string
+    sql: ${TABLE}."CASE_ID" ;;
   }
 
   dimension: case_number {
@@ -61,7 +59,7 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: cnote_key {
     label: "Credit Note Number"
-    type: string
+    type: number
     sql: ${TABLE}."CNOTE_KEY" ;;
   }
 
@@ -113,16 +111,21 @@ view: vw_credits_cases_w_salecodes {
     value_format_name: gbp
   }
 
-  dimension: cs_account_number__c {
+  dimension: customer_account_key {
     label: "Customer Account Number"
     type: string
-    sql: ${TABLE}."CS_Account_Number__c" ;;
+    sql: ${TABLE}."CUSTOMER_ACCOUNT_KEY" ;;
   }
 
   dimension: customer_key {
     hidden: yes
     type: string
     sql: ${TABLE}."CUSTOMER_KEY" ;;
+  }
+
+  dimension: customer_name {
+    type: string
+    sql: ${TABLE}."CUSTOMER_NAME" ;;
   }
 
   dimension: d_desc {
@@ -136,10 +139,10 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."DATE_AND_INVOICE_REF" ;;
   }
 
-  dimension: description {
+  dimension: description_ {
     label: "Case Details"
     type: string
-    sql: ${TABLE}."Description" ;;
+    sql: ${TABLE}."DESCRIPTION_" ;;
   }
 
   dimension: e_desc {
@@ -235,12 +238,6 @@ view: vw_credits_cases_w_salecodes {
       year
     ]
     sql: ${TABLE}."LastModifiedDate" ;;
-  }
-
-  dimension: name {
-    label: "Customer Name"
-    type: string
-    sql: ${TABLE}."NAME" ;;
   }
 
   dimension: office_code {
@@ -345,10 +342,10 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."Status" ;;
   }
 
-  dimension: subject {
+  dimension: subject_ {
     label: "Case Subject"
     type: string
-    sql: ${TABLE}."Subject" ;;
+    sql: ${TABLE}."SUBJECT_" ;;
   }
 
   dimension: supplied_name {
@@ -362,20 +359,8 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."TRANSACTION_CODE" ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: [cnote_key, sales_code_h]
-  }
-
-## measure: count {
+##  measure: count {
 ##    type: count
-##    drill_fields: [id, name, supplied_name, case_owner_full_name]
+##    drill_fields: [customer_name, supplied_name, case_owner_full_name]
 ##  }
-
-
-##  measure: sum {
-##    type: sum
-##    drill_fields: [id, name, supplied_name]
-##  }
-
 }
