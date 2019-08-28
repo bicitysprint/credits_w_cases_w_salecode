@@ -120,6 +120,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: customer_key {
+    hidden: yes
     type: string
     sql: ${TABLE}."CUSTOMER_KEY" ;;
   }
