@@ -173,7 +173,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Account Manager"
     type: string
     sql: case
-         when ${TABLE}."G_DESC" IS NULL then 'No Account Manager'
+         when ${TABLE}."G_DESC" IS NULL then 'NO ACCOUNT MANAGER'
          else ${TABLE}."G_DESC"
         END ;;
   }
