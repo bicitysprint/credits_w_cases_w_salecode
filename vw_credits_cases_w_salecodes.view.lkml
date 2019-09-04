@@ -9,14 +9,12 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: applied_to_pay {
     label: "Applied To Pay"
-    hidden: yes
     type: string
     sql: ${TABLE}."APPLIED_TO_PAY" ;;
   }
 
   dimension: applied_to_stmt {
     label: "Applied To Statement"
-    hidden: yes
     type: string
     sql: ${TABLE}."APPLIED_TO_STMT" ;;
   }
@@ -71,6 +69,7 @@ view: vw_credits_cases_w_salecodes {
 
   dimension_group: created {
     label: "Case Created"
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -104,11 +103,23 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."CREDITS" ;;
   }
 
-  dimension: NET_Credit{
+  dimension: NET_Credit {
     label: "Credit NET Amount"
     type: number
     sql: ${credits} - ${amt_1} ;;
     value_format_name: gbp
+  }
+
+  dimension: cs_ccg__c {
+    label: "CCG"
+    type: string
+    sql: ${TABLE}."CS_CCG__c" ;;
+  }
+
+  dimension: cs_credit_controller_name__c {
+    label: "Credit_Controller_Name"
+    type: string
+    sql: ${TABLE}."CS_Credit_Controller_Name__c" ;;
   }
 
   dimension: customer_account_key {
@@ -153,6 +164,7 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: f_desc {
     label: "Customer Tier"
+    hidden: yes
     type: string
     sql: ${TABLE}."F_DESC" ;;
   }
@@ -165,8 +177,21 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: h_desc {
     label: "Credit Controller"
+    hidden: yes
     type: string
     sql: ${TABLE}."H_DESC" ;;
+  }
+
+  dimension: ind_type {
+    label: "Industry Type"
+    type: string
+    sql: ${TABLE}."IND_TYPE" ;;
+  }
+
+  dimension: industry {
+    hidden: yes
+    type: string
+    sql: ${TABLE}."Industry" ;;
   }
 
   dimension: internal_ref {
@@ -252,6 +277,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension_group: original_case_createddate {
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -331,7 +357,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: sic_desc {
-    label: "Sector Description"
+    hidden: yes
     type: string
     sql: ${TABLE}."SicDesc" ;;
   }
@@ -359,8 +385,23 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."TRANSACTION_CODE" ;;
   }
 
-##  measure: count {
-##    type: count
-##    drill_fields: [customer_name, supplied_name, case_owner_full_name]
-##  }
+  dimension_group: true_created {
+    label: "Case Created Date"
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}."TRUE_CREATED_DATE" ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: [customer_name, supplied_name, case_owner_full_name]
+  }
 }
