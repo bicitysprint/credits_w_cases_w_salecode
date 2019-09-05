@@ -414,7 +414,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Sum of Credit Note Value (NET)"
     type: sum
     sql: ${TABLE}.CREDIT_NET_AMOUNT ;;
-    value_format_name: gbp_0
+    value_format_name: gbp
     drill_fields: [customer_name, case_owner_full_name, cnote_key]
   }
 
