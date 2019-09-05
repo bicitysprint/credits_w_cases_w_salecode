@@ -105,10 +105,10 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."CREDITS" ;;
   }
 
-  dimension: NET_Credit {
+  dimension: credit_net_amount {
     label: "Credit NET Amount"
     type: number
-    sql: ${credits} - ${amt_1} ;;
+    sql: ${TABLE}."CREDIT_NET_AMOUNT"  ;;
     value_format_name: gbp
   }
 
@@ -413,7 +413,7 @@ view: vw_credits_cases_w_salecodes {
   measure: sum {
     label: "Sum of Credit Note Value (NET)"
     type: sum
-    sql: ${credits} - ${amt_1} ;;
+    sql: ${TABLE}.CREDIT_NET_AMOUNT ;;
     value_format_name: gbp
     drill_fields: [customer_name, supplied_name, case_owner_full_name, cnote_key]
   }
