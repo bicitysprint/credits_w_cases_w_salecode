@@ -109,7 +109,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Credit NET Amount"
     type: number
     sql: ${TABLE}."CREDIT_NET_AMOUNT"  ;;
-    value_format_name: gbp
+    value_format_name: gbp_0
   }
 
   dimension: cs_ccg__c {
