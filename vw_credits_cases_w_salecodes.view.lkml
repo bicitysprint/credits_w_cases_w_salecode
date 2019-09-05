@@ -3,6 +3,7 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: amt_1 {
     label: "Credit VAT"
+    hidden: yes
     type: number
     sql: ${TABLE}."AMT_1" ;;
   }
@@ -99,6 +100,7 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: credits {
     label: "Credit Gross Amount"
+    hidden: yes
     type: number
     sql: ${TABLE}."CREDITS" ;;
   }
@@ -407,4 +409,14 @@ view: vw_credits_cases_w_salecodes {
     type: count
     drill_fields: [customer_name, supplied_name, case_owner_full_name, cnote_key]
   }
+
+  measure: sum {
+    label: "Sum of Credit Note Value (NET)"
+    type: sum
+    sql: ${credits} - ${amt_1} ;;
+    value_format_name: gbp_0
+    drill_fields: [customer_name, supplied_name, case_owner_full_name, cnote_key]
+  }
+
+
 }
