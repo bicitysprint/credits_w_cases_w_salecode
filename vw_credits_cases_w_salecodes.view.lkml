@@ -407,7 +407,7 @@ view: vw_credits_cases_w_salecodes {
 
   measure: count {
     type: count
-    drill_fields: [customer_name, supplied_name, case_owner_full_name, cnote_key]
+    drill_fields: [customer_name, case_number, case_owner_full_name, cnote_key]
   }
 
   measure: sum {
@@ -415,7 +415,7 @@ view: vw_credits_cases_w_salecodes {
     type: sum
     sql: ${TABLE}.CREDIT_NET_AMOUNT ;;
     value_format_name: gbp_0
-    drill_fields: [customer_name, supplied_name, case_owner_full_name, cnote_key]
+    drill_fields: [customer_name, case_owner_full_name, cnote_key]
   }
 
 
