@@ -84,7 +84,7 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."CreatedDate" ;;
   }
 
-  dimension_group: credit_note {
+  dimension_group: credit_note_date {
     type: time
     timeframes: [
       raw,
@@ -407,7 +407,7 @@ view: vw_credits_cases_w_salecodes {
 
   measure: count {
     type: count
-    drill_fields: [customer_name, d_desc, g_desc, cs_credit_controller_name__c, reason, cnote_key, credit_net_amount]
+    drill_fields: [customer_name, d_desc, g_desc, cs_credit_controller_name__c, reason, cnote_key, credit_note_date_date, credit_net_amount]
   }
 
   measure: sum {
