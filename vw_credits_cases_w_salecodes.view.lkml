@@ -152,8 +152,17 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."D_DESC" ;;
   }
 
-  dimension: date_and_invoice_ref {
-    type: string
+  dimension_group: date_and_invoice_ref {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
     sql: ${TABLE}."DATE_AND_INVOICE_REF" ;;
   }
 
