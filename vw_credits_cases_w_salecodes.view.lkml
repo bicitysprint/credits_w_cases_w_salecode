@@ -123,7 +123,10 @@ view: vw_credits_cases_w_salecodes {
   dimension: cs_credit_controller_name__c {
     label: "Credit_Controller_Name"
     type: string
-    sql: ${TABLE}."CS_Credit_Controller_Name__c" ;;
+    sql: case
+         when ${TABLE}."CS_Credit_Controller_Name__c" IS NULL then 'CS Account'
+         else ${TABLE}."CS_Credit_Controller_Name__c"
+         END ;;
   }
 
   dimension: customer_account_key {
