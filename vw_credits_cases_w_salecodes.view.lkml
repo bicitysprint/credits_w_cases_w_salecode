@@ -343,7 +343,9 @@ view: vw_credits_cases_w_salecodes {
     label: "Case Reason"
     type: string
     sql: ${TABLE}."Reason" ;;
-  }
+
+    drill_fields: [cs_credit_controller_name__c, case_number, created_month, reason]
+    }
 
   dimension: sales_code_e {
     label: "Sales Person Code"
