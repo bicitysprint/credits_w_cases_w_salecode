@@ -61,7 +61,7 @@ view: vw_credits_cases_w_salecodes {
     type: string
     sql: ${TABLE}."CNOTE_KEY" ;;
 
-    drill_fields: [customer_name, d_desc, g_desc, cs_credit_controller_name__c, reason, cnote_key, credit_note_date_date]
+##    drill_fields: [customer_name, d_desc, g_desc, cs_credit_controller_name__c, reason, cnote_key, credit_note_date_date]
   }
 
   dimension: created_by_id {
