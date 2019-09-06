@@ -160,7 +160,7 @@ view: vw_credits_cases_w_salecodes {
 
   dimension_group: days_since_invoice_issued{
     type: duration
-    intervals: [week, year]
+    intervals: [day]
     sql_start: ${TABLE}.invoice ;;
     sql_end: ${TABLE}.date_and_invoice_ref ;;
       }
