@@ -101,7 +101,7 @@ view: vw_credits_cases_w_salecodes {
       year
     ]
     sql: ${TABLE}."CREDIT_NOTE_DATE" ;;
-##  drill_fields: [credit_note]
+  drill_fields: [credit_note_date_month]
   }
 
   dimension: credits {
