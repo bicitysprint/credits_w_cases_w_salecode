@@ -420,6 +420,7 @@ view: vw_credits_cases_w_salecodes {
       year
     ]
     sql: ${TABLE}."TRUE_CREATED_DATE" ;;
+  ##  drill_fields: []
   }
 
   measure: count {
