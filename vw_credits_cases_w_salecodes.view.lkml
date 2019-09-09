@@ -424,6 +424,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   measure: count {
+    label: "Count of Credits"
     type: count
     drill_fields: [customer_name, d_desc, g_desc, cs_credit_controller_name__c, reason, credit_note_date_date, cnote_key, credit_net_amount]
   }
