@@ -72,6 +72,7 @@ view: vw_credits_cases_w_salecodes {
 
   dimension_group: created {
     label: "Case Created"
+    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -432,7 +433,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Count of Cases"
     sql: ${TABLE}.CASE_ID ;;
     type: count_distinct
-    drill_fields: [customer_name, case_owner_full_name, case_number, created_date, case_id]
+    drill_fields: [customer_name, case_owner_full_name, case_number, true_created_date, case_id]
   }
 
 
