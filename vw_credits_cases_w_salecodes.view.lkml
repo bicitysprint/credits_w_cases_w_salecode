@@ -72,7 +72,6 @@ view: vw_credits_cases_w_salecodes {
 
   dimension_group: created {
     label: "Case Created"
-    hidden: yes
     type: time
     timeframes: [
       raw,
@@ -423,11 +422,18 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."TRUE_CREATED_DATE" ;;
   }
 
-  measure: count {
+  measure: count_of_credits {
     label: "Count of Credits"
     type: count
     drill_fields: [customer_name, d_desc, g_desc, cs_credit_controller_name__c, reason, credit_note_date_date, cnote_key, credit_net_amount]
   }
+
+  measure: count_of_cases {
+    label: "Count of Credits"
+    type: count
+    drill_fields: [customer_name, d_desc, g_desc, cs_credit_controller_name__c, reason, case_owner_full_name, case_id, created_date, created_by_id]
+  }
+
 
   measure: sum {
     label: "Sum of Credit Note Value (NET)"
