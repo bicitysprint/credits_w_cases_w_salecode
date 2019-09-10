@@ -431,7 +431,7 @@ view: vw_credits_cases_w_salecodes {
   measure: count_of_cases {
     label: "Count of Credits"
     type: count
-    drill_fields: [customer_name, d_desc, g_desc, cs_credit_controller_name__c, reason, case_owner_full_name, case_id, created_date, created_by_id]
+    drill_fields: [customer_name, d_desc, g_desc, cs_credit_controller_name__c, reason, case_owner_full_name, case_number, created_date, created_by_id]
   }
 
 
