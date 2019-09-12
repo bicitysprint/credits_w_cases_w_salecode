@@ -246,7 +246,7 @@ view: vw_credits_cases_w_salecodes {
          when ${TABLE}."IND_TYPE" = 'Manufacturing/Industrial' or "IND_TYPE" = 'Manufacturing' then 'Manufacturing Sector'
          when ${TABLE}."IND_TYPE" = 'Wholesale and retail trade; repair of motor vehicles and motorcycles' or "IND_TYPE" = 'Retail Wholesale' or "IND_TYPE" = 'Fashion' then 'Retail Sector'
          when ${TABLE}."IND_TYPE" = 'Transportation and storage' or "IND_TYPE" = 'Transport Logistics' or "IND_TYPE" = 'RailNetwork' then 'Transport Sector'
-         when ${TABLE}."IND_TYPE" = 'Public administration and defence; compulsory social security' or "IND_TYPE" = 'Public Sector' or "IND_TYPE" = ' LocalGovernment' then 'Public Sector'
+         when ${TABLE}."IND_TYPE" = 'Public administration and defence; compulsory social security' or "IND_TYPE" = 'Public Sector' or "IND_TYPE" = 'LocalGovernment' then 'Public Sector'
          when ${TABLE}."IND_TYPE" = 'Media' or "IND_TYPE" = 'Arts, entertainment and recreation' or "IND_TYPE" = 'Printing' then 'Arts & Media Sector'
          when ${TABLE}."IND_TYPE" = 'Electricals' or "IND_TYPE" = 'Utilities Petrochemical' then 'Energy Sector'
          else ${TABLE}."IND_TYPE"
