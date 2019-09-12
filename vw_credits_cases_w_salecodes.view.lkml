@@ -236,7 +236,10 @@ view: vw_credits_cases_w_salecodes {
     type: string
     sql: case
          when ${TABLE}."IND_TYPE" = '0' or "IND_TYPE" = '501' or "IND_TYPE" = '3PL' or "IND_TYPE" = 'credit card' or "IND_TYPE" = 'CreditCard' or "IND_TYPE" = 'Tobeupdated'
-         or "IND_TYPE" = 'Activities of households as employers; undifferentiated goods- and services-prod' or "IND_TYPE" = 'DIY GardenCentre' or "IND_TYPE" = 'Other service activities' then 'Other'
+         or "IND_TYPE" = 'Activities of households as employers; undifferentiated goods- and services-prod' or "IND_TYPE" = 'DIY GardenCentre' or "IND_TYPE" = 'Other service activities'
+         or "IND_TYPE" = 'Telecommunications' or "IND_TYPE" = 'Research Development' or "IND_TYPE" = 'Fitness Wellbeing' or "IND_TYPE" = 'Activities of extraterritorial organisations and bodies'
+         or "IND_TYPE" = 'Musics Media' or "IND_TYPE" = 'Consumer PersonalAccount' or "IND_TYPE" = 'Mining and Quarrying' or "IND_TYPE" = 'Electricity, gas, steam and air conditioning supply'
+         or "IND_TYPE" = 'Toys Games' or "IND_TYPE" = 'Water supply, sewerage, waste management and remediation activities' or "IND_TYPE" = 'Agriculture, Forestry and Fishing' then 'Other'
          when ${TABLE}."IND_TYPE" = 'FInancialServices' or "IND_TYPE" = 'Financial and insurance activities' then 'Financial Services Sector'
          when ${TABLE}."IND_TYPE" = 'Industrial And BusinessSupplies' or "IND_TYPE" = 'Industrial BusinessSupplies' then 'Industrial Business Supplies'
          when ${TABLE}."IND_TYPE" = 'Manufacturing/Industrial' or "IND_TYPE" = 'Manufacturing' then 'Manufacturing Sector'
