@@ -237,11 +237,11 @@ view: vw_credits_cases_w_salecodes {
     sql: case
          when ${TABLE}."IND_TYPE" = '0' or "IND_TYPE" = '501' or "IND_TYPE" = '3PL' or "IND_TYPE" = 'credit card' or "IND_TYPE" = 'CreditCard' or "IND_TYPE" = 'Tobeupdated'
          or "IND_TYPE" = 'Activities of households as employers; undifferentiated goods- and services-prod' or "IND_TYPE" = 'DIY GardenCentre' or "IND_TYPE" = 'Other service activities' then 'Other'
-         when ${TABLE}."IND_TYPE" = 'FInancialServices' or "IND_TYPE" = 'Financial and insurance activities' then 'Financial Services'
+         when ${TABLE}."IND_TYPE" = 'FInancialServices' or "IND_TYPE" = 'Financial and insurance activities' then 'Financial Services Sector'
          when ${TABLE}."IND_TYPE" = 'Industrial And BusinessSupplies' or "IND_TYPE" = 'Industrial BusinessSupplies' then 'Industrial Business Supplies'
-         when ${TABLE}."IND_TYPE" = 'Manufacturing/Industrial' then 'Manufacturing'
-         when ${TABLE}."IND_TYPE" = 'Wholesale and retail trade; repair of motor vehicles and motorcycles' then 'Retail Wholesale'
-         when ${TABLE}."IND_TYPE" = 'Transportation and storage' or "IND_TYPE" = 'Transport Logistics' then 'Transport Logistics And Storage'
+         when ${TABLE}."IND_TYPE" = 'Manufacturing/Industrial' or "IND_TYPE" = 'Manufacturing' then 'Manufacturing Sector'
+         when ${TABLE}."IND_TYPE" = 'Wholesale and retail trade; repair of motor vehicles and motorcycles' or "IND_TYPE" = 'Retail Wholesale' then 'Retail Sector'
+         when ${TABLE}."IND_TYPE" = 'Transportation and storage' or "IND_TYPE" = 'Transport Logistics' then 'Transport Sector'
          else ${TABLE}."IND_TYPE"
          END ;;
   }
