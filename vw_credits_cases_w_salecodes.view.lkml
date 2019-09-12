@@ -42,7 +42,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension_group: clean_crednote_inv_date {
-    label: "Credit Note Related Invoice Date"
+    label: "Credit Note Related Invoice or Job Date"
     type: time
     timeframes: [
       raw,
