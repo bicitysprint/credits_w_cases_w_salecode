@@ -240,6 +240,7 @@ view: vw_credits_cases_w_salecodes {
          when ${TABLE}."IND_TYPE" = 'FInancialServices' or "IND_TYPE" = 'Financial and insurance activities' then 'Financial Services'
          when ${TABLE}."IND_TYPE" = 'Industrial And BusinessSupplies' or "IND_TYPE" = 'Industrial BusinessSupplies' then 'Industrial Business Supplies'
          when ${TABLE}."IND_TYPE" = 'Manufacturing/Industrial' then 'Manufacturing'
+         when ${TABLE}."IND_TYPE" = 'Wholesale and retail trade; repair of motor vehicles and motorcycles' then 'Retail Wholesale'
          else ${TABLE}."IND_TYPE"
          END ;;
   }
