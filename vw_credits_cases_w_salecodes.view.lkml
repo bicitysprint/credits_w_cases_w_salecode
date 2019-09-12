@@ -463,7 +463,6 @@ view: vw_credits_cases_w_salecodes {
     drill_fields: [customer_name, case_owner_full_name, case_number, true_created_date, case_id]
   }
 
-
   measure: sum {
     label: "Sum of Credit Note Value (NET)"
     type: sum
@@ -472,5 +471,10 @@ view: vw_credits_cases_w_salecodes {
     drill_fields: [customer_name, case_owner_full_name, cnote_key, credit_note_date_date, credit_net_amount]
   }
 
+  measure: sum_of_date_diff {
+    label: "Sum of Date Differences"
+    type: number
+    sql: sum(${date_diff};;
+   }
 
 }
