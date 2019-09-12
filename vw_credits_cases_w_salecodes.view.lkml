@@ -41,6 +41,27 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."CASE_OWNER_FULL_NAME" ;;
   }
 
+  dimension_group: clean_crednote_inv_date {
+    label: "Credit Note Related Invoice Date"
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}."CLEAN_CREDNOTE_INV_DATE" ;;
+  }
+
+  dimension: clean_crednote_inv_number {
+    label: "Credit Note Related Invoice Number"
+    type: string
+    sql: ${TABLE}."CLEAN_CREDNOTE_INV_NUMBER" ;;
+  }
+
   dimension_group: closed {
     label: "Case Closed Date"
     type: time
