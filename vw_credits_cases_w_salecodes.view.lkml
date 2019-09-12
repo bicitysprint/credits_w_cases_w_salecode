@@ -252,6 +252,8 @@ view: vw_credits_cases_w_salecodes {
          when ${TABLE}."IND_TYPE" = 'NHS' or "IND_TYPE" = 'Human health and social work activities' then 'Medical & Social Work'
          when ${TABLE}."IND_TYPE" = 'Human health and social work activities' or "IND_TYPE" = 'BusinessService Consultancy' then 'HR & Consultancy'
          when ${TABLE}."IND_TYPE" = 'Information and communication' or "IND_TYPE" = 'Technology' then 'Information & Technology'
+         when ${TABLE}."IND_TYPE" = 'Administrative and support service activities' then 'Admin & Support Services'
+         when ${TABLE}."IND_TYPE" = 'Professional, scientific and technical activities' then 'Professional Services'
          else ${TABLE}."IND_TYPE"
          END ;;
   }
