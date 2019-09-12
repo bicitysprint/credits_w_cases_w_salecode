@@ -190,6 +190,11 @@ view: vw_credits_cases_w_salecodes {
 ##    sql_end: ${TABLE}.date_and_invoice_ref ;;
 ##      }
 
+  dimension: date_diff {
+    type: number
+    sql: DATEDIFF(day, ${clean_crednote_inv_date_date}, ${credit_note_date_date} ;;
+  }
+
 
   dimension: description_ {
     label: "Case Details"
