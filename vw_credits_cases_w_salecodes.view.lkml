@@ -191,6 +191,7 @@ view: vw_credits_cases_w_salecodes {
 ##      }
 
   dimension: date_diff {
+    label: "Days Until Query Raised"
     type: number
     sql: DATEDIFF(day, ${clean_crednote_inv_date_date}, ${credit_note_date_date} ;;
   }
