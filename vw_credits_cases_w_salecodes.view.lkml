@@ -250,7 +250,8 @@ view: vw_credits_cases_w_salecodes {
          when ${TABLE}."IND_TYPE" = 'Media' or "IND_TYPE" = 'Arts, entertainment and recreation' or "IND_TYPE" = 'Printing' then 'Arts & Media'
          when ${TABLE}."IND_TYPE" = 'Electricals' or "IND_TYPE" = 'Utilities Petrochemical' then 'Energy'
          when ${TABLE}."IND_TYPE" = 'NHS' or "IND_TYPE" = 'Human health and social work activities' then 'Medical & Social Work'
-         when ${TABLE}."IND_TYPE" = 'Human health and social work activities' or "IND_TYPE" = ' BusinessService Consultancy' then 'HR & Consultancy'
+         when ${TABLE}."IND_TYPE" = 'Human health and social work activities' or "IND_TYPE" = 'BusinessService Consultancy' then 'HR & Consultancy'
+         when ${TABLE}."IND_TYPE" = 'Information and communication' or "IND_TYPE" = 'Technology' then 'Information & Technology'
          else ${TABLE}."IND_TYPE"
          END ;;
   }
