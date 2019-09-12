@@ -484,6 +484,7 @@ view: vw_credits_cases_w_salecodes {
         field: date_diff
         value: ">=0"
         }
+      value_format_name: decimal_2
       sql: ${date_diff} ;;
     }
 
