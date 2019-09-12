@@ -241,6 +241,7 @@ view: vw_credits_cases_w_salecodes {
          when ${TABLE}."IND_TYPE" = 'Industrial And BusinessSupplies' or "IND_TYPE" = 'Industrial BusinessSupplies' then 'Industrial Business Supplies'
          when ${TABLE}."IND_TYPE" = 'Manufacturing/Industrial' then 'Manufacturing'
          when ${TABLE}."IND_TYPE" = 'Wholesale and retail trade; repair of motor vehicles and motorcycles' then 'Retail Wholesale'
+         when ${TABLE}."IND_TYPE" = 'Transportation and storage' or "IND_TYPE" = 'Transport Logistics' then 'Transport Logistics And Storage'
          else ${TABLE}."IND_TYPE"
          END ;;
   }
