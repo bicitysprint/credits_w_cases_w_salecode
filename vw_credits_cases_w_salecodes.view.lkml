@@ -254,6 +254,7 @@ view: vw_credits_cases_w_salecodes {
          when ${TABLE}."IND_TYPE" = 'Information and communication' or "IND_TYPE" = 'Technology' then 'Information & Technology'
          when ${TABLE}."IND_TYPE" = 'Administrative and support service activities' then 'Admin & Support Services'
          when ${TABLE}."IND_TYPE" = 'Professional, scientific and technical activities' then 'Professional Services'
+         when ${TABLE}."IND_TYPE" = 'Travel Tourism' or "IND_TYPE" = 'Baggage' then 'Travel'
          else ${TABLE}."IND_TYPE"
          END ;;
   }
