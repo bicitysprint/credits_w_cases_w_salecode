@@ -234,7 +234,10 @@ view: vw_credits_cases_w_salecodes {
   dimension: ind_type {
     label: "Industry Type"
     type: string
-    sql: ${TABLE}."IND_TYPE" ;;
+    sql: case
+         when ${TABLE}."ind_type" = '0' or '3PL' or '501' or 'credit card' or 'CreditCard' or ' Tobeupdated' or 'Consumer PersonalAccount' or 'Other' then 'Other'
+         else ${TABLE}."ind_type"
+         END ;;
   }
 
   dimension: industry {
