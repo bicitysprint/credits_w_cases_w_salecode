@@ -481,7 +481,7 @@ view: vw_credits_cases_w_salecodes {
       label: "Avg Number of Days To Query"
       type: average
       sql: case
-         when ${TABLE}."Avg Number of Days To Query" <0 then 'N/A'
+         when ${TABLE}."Days Until Query Raised" <0 then 'N/A'
          else ${TABLE}."Avg Number of Days To Query"
          END ;;
     }
