@@ -480,10 +480,11 @@ view: vw_credits_cases_w_salecodes {
     measure: avg_of_date_diff {
       label: "Avg Number of Days To Query"
       type: average
-      sql: case
-         when ${TABLE}."Date_Diff" <0 then 'N/A'
-         else ${TABLE}."Avg_Of_Date_Diff"
-         END ;;
+      filters: {
+        field: date_diff
+        value: ">=0"
+        }
+      sql: ${date_diff} ;;
     }
 
 }
