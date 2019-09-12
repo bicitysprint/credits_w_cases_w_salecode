@@ -235,7 +235,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Industry Type"
     type: string
     sql: case
-         when ${TABLE}."IND_TYPE" = '0' or '501' then 'Other'
+         when ${TABLE}."IND_TYPE" = '0' or "IND_TYPE" = '501' then 'Other'
          else ${TABLE}."IND_TYPE"
          END ;;
   }
