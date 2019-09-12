@@ -57,7 +57,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: clean_crednote_inv_number {
-    label: "Credit Note Related Invoice Number"
+    label: "Credit Note Related Invoice or Job Number"
     type: string
     sql: ${TABLE}."CLEAN_CREDNOTE_INV_NUMBER" ;;
   }
