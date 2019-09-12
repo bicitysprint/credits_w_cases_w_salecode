@@ -248,6 +248,7 @@ view: vw_credits_cases_w_salecodes {
          when ${TABLE}."IND_TYPE" = 'Transportation and storage' or "IND_TYPE" = 'Transport Logistics' or "IND_TYPE" = 'RailNetwork' then 'Transport Sector'
          when ${TABLE}."IND_TYPE" = 'Public administration and defence; compulsory social security' or "IND_TYPE" = 'Public Sector' then 'Public Sector'
          when ${TABLE}."IND_TYPE" = 'Media' or "IND_TYPE" = 'Arts, entertainment and recreation' or "IND_TYPE" = 'Printing' then 'Arts & Media Sector'
+         when ${TABLE}."IND_TYPE" = 'Electricals' or "IND_TYPE" = 'Utilities Petrochemical' then 'Energy Sector'
          else ${TABLE}."IND_TYPE"
          END ;;
   }
