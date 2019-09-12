@@ -243,7 +243,7 @@ view: vw_credits_cases_w_salecodes {
          or "IND_TYPE" = 'Environment Waste'  then 'Other'
          when ${TABLE}."IND_TYPE" = 'FInancialServices' or "IND_TYPE" = 'Financial and insurance activities' or "IND_TYPE" = 'FM'  or "IND_TYPE" = 'Accountancy' then 'Financial Services Sector'
          when ${TABLE}."IND_TYPE" = 'Industrial And BusinessSupplies' or "IND_TYPE" = 'Industrial BusinessSupplies' then 'Industrial Business Supplies'
-         when ${TABLE}."IND_TYPE" = 'Manufacturing/Industrial' or "IND_TYPE" = 'Manufacturing' then 'Manufacturing Sector'
+         when ${TABLE}."IND_TYPE" = 'Manufacturing/Industrial' or "IND_TYPE" = 'Manufacturing' or "IND_TYPE" = 'Consumables' or "IND_TYPE" = 'Furnishing' then 'Manufacturing Sector'
          when ${TABLE}."IND_TYPE" = 'Wholesale and retail trade; repair of motor vehicles and motorcycles' or "IND_TYPE" = 'Retail Wholesale' or "IND_TYPE" = 'Fashion' then 'Retail Sector'
          when ${TABLE}."IND_TYPE" = 'Transportation and storage' or "IND_TYPE" = 'Transport Logistics' or "IND_TYPE" = 'RailNetwork' then 'Transport Sector'
          when ${TABLE}."IND_TYPE" = 'Public administration and defence; compulsory social security' or "IND_TYPE" = 'Public Sector' or "IND_TYPE" = 'LocalGovernment' then 'Public Sector'
