@@ -205,7 +205,9 @@ view: vw_credits_cases_w_salecodes {
   dimension: e_desc {
     label: "Sales Person Name"
     type: string
-    sql: ${TABLE}."E_DESC" ;;
+    sql: case
+         when ${TABLE}."E_DESC" = 'ALEX 1' or 'ALEX RUNDLE' then 'ALEX RUNDLE'
+         else ${TABLE}."E_DESC" ;;
   }
 
   dimension: f_desc {
