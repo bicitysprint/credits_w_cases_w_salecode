@@ -206,7 +206,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Sales Person Name"
     type: string
     sql: case
-         when ${TABLE}."E_DESC" = 'ALEX 1' or 'ALEX RUNDLE' then 'ALEX RUNDLE'
+         when ${TABLE}."E_DESC" = 'ALEX 1' or "E_DESC" = 'ALEX RUNDLE' then 'ALEX RUNDLE'
          else ${TABLE}."E_DESC" ;;
   }
 
