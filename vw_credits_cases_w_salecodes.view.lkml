@@ -401,8 +401,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Case Reason"
     type: string
     sql: ${TABLE}."Reason" ;;
-    drill_fields: [case_number, true_created_date, subject_, status]
-    }
+  }
 
   dimension: sales_code_e {
     label: "Sales Person Code"
@@ -489,7 +488,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Count of Cases"
     sql: ${TABLE}.CASE_ID ;;
     type: count_distinct
-    drill_fields: [customer_name, case_owner_full_name, case_number, true_created_date, case_id]
+    drill_fields: [customer_name, case_owner_full_name, case_number, true_created_date, case_id, subject_, status]
   }
 
   measure: sum {
