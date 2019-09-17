@@ -54,6 +54,7 @@ view: vw_credits_cases_w_salecodes {
       year
     ]
     sql: ${TABLE}."CLEAN_CREDNOTE_INV_DATE" ;;
+    drill_fields: [clean_crednote_inv_date_date, clean_crednote_inv_number, customer_account_key, date_diff]
   }
 
   dimension: clean_crednote_inv_number {
