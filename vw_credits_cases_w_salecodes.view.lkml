@@ -481,7 +481,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Count of Credits"
     type: count_distinct
     sql: ${TABLE}.cnote_key ;;
-    drill_fields: [customer_name, d_desc, g_desc, cs_credit_controller_name__c, reason, credit_note_date_date, cnote_key, credit_net_amount]
+    drill_fields: [customer_account_key, customer_name, d_desc, g_desc, cs_credit_controller_name__c, reason, credit_note_date_date, cnote_key, credit_net_amount]
   }
 
   measure: count_of_cases {
