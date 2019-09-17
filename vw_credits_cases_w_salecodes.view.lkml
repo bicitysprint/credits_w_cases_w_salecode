@@ -401,6 +401,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Case Reason"
     type: string
     sql: ${TABLE}."Reason" ;;
+    drill_fields: [case_number, true_created_date, subject_, status]
     }
 
   dimension: sales_code_e {
