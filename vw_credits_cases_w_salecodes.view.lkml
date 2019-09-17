@@ -208,6 +208,7 @@ view: vw_credits_cases_w_salecodes {
     sql: case
          when ${TABLE}."E_DESC" = 'ALEX 1' or "E_DESC" = 'ALEX RUNDLE' then 'ALEX RUNDLE'
          when ${TABLE}."E_DESC" = 'EMMA KIERSEY' or "E_DESC" = 'EMMA KIERSEY C' then 'EMMA KIERSEY'
+         when ${TABLE}."E_DESC" = 'LISA CLARKE' or "E_DESC" = 'LISA CLARKE2' then 'LISA CLARKE'
          else ${TABLE}."E_DESC"
         END ;;
   }
