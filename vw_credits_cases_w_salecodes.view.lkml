@@ -53,6 +53,7 @@ view: vw_credits_cases_w_salecodes {
       quarter,
       year
     ]
+    skip_drill_filter: yes
     sql: ${TABLE}."CLEAN_CREDNOTE_INV_DATE" ;;
   }
 
