@@ -262,7 +262,7 @@ view: vw_credits_cases_w_salecodes {
          when ${TABLE}."IND_TYPE" = 'Travel Tourism' or "IND_TYPE" = 'Baggage' then 'Travel'
          else ${TABLE}."IND_TYPE"
          END ;;
-    drill_fields: [ind_type, cnote_key]
+    drill_fields: [ind_type, customer_account_key, customer_name, cnote_key]
   }
 
   dimension: industry {
