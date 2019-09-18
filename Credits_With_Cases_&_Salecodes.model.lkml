@@ -18,4 +18,12 @@ persist_with: credits_w_cases_w_salecodes_default_datagroup
 explore: vw_credits_cases_w_salecodes {
   persist_with: credits_w_cases_w_salecodes_default_datagroup
   label: "Credits Cases And Salecodes"
-  }
+
+
+join: aged_debt_view {
+  view_label: "Aged Debt View"
+  relationship: one_to_one
+  sql_on: ${aged_debt_view.cust_key} = ${vw_credits_cases_w_salecodes.customer_account_key}  ;;
+}
+
+}
