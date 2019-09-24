@@ -37,7 +37,7 @@ join: aged_debt_view {
   join: vw_revenue_by_ccg {
     view_label: "Revenue_by_CCG"
     relationship: one_to_one
-    sql_on: ${vw_revenue_by_ccg.customer_key} = ${vw_credits_cases_w_salecodes.customer_account_key}  ;;
+    sql_on: ${vw_revenue_by_ccg.customer_key} = ${vw_credits_cases_w_salecodes.customer_account_key} and   ;;
   }
 
 
