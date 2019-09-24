@@ -49,4 +49,11 @@ view: vw_invoice_by_ccg {
     type: count
     drill_fields: []
   }
+
+  measure: sum_of_invoices {
+    label: "Sum of Invoice Value (NET)"
+    type: sum
+    sql: ${TABLE}.NET ;;
+    value_format_name: gbp
+  }
 }
