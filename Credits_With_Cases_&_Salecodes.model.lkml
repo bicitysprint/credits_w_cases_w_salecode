@@ -27,4 +27,10 @@ join: aged_debt_view {
   sql_on: ${aged_debt_view.cust_key} = ${vw_credits_cases_w_salecodes.customer_account_key}  ;;
 }
 
+  join: vw_invoice_by_ccg {
+    view_label: "Invoice_by_CCG"
+    relationship: one_to_one
+    sql_on: ${vw_invoice_by_ccg.customer_key} = ${vw_credits_cases_w_salecodes.customer_account_key}  ;;
+  }
+
 }
