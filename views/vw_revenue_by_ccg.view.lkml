@@ -44,4 +44,13 @@ view: vw_revenue_by_ccg {
     type: count
     drill_fields: []
   }
+
+  measure: sum_of_revenue {
+    label: "Sum of Revenue (NET)"
+    type: sum
+    sql: ${TABLE}.TRUE_REVENUE ;;
+    value_format_name: gbp
+  }
+
+
 }
