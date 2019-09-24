@@ -26,4 +26,7 @@ join: aged_debt_view {
   sql_on: ${aged_debt_view.cust_key} = ${vw_credits_cases_w_salecodes.customer_account_key}  ;;
 }
 
+
+
+
 }
