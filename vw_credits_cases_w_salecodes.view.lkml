@@ -500,6 +500,14 @@ view: vw_credits_cases_w_salecodes {
     drill_fields: [customer_name, case_owner_full_name, cnote_key, credit_note_date_date, credit_net_amount]
   }
 
+  measure: sum_of_invoices {
+    label: "Sum of Invoice Value (NET)"
+    type: sum
+    sql: ${TABLE}.INVOICE_NET ;;
+    value_format_name: gbp
+  }
+
+
 ##  measure: sum_of_date_diff {
 ##    label: "Sum of Date Differences"
 ##    type: number
