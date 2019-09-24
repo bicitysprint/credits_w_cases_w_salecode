@@ -2,6 +2,7 @@ connection: "db"
 
 # include all the views
 include: "*.view"
+include: "/views/vw_invoice_by_ccg.view"
 
 datagroup: credits_w_cases_w_salecodes_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
