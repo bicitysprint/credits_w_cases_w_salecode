@@ -1,21 +1,6 @@
 view: vw_revenue_by_ccg {
   sql_table_name: CC.VW_REVENUE_BY_CCG ;;
 
-  dimension: archive {
-    type: number
-    sql: ${TABLE}."ARCHIVE" ;;
-  }
-
-  dimension: ccg_code {
-    type: string
-    sql: ${TABLE}."CCG_CODE" ;;
-  }
-
-  dimension: ccg_tier {
-    type: string
-    sql: ${TABLE}."CCG_TIER" ;;
-  }
-
   dimension: customer_key {
     type: string
     sql: ${TABLE}."CUSTOMER_KEY" ;;
@@ -35,22 +20,18 @@ view: vw_revenue_by_ccg {
     sql: ${TABLE}."INVOICE_DATE" ;;
   }
 
-  dimension: true_revenue {
+  dimension: revenue {
     type: number
-    sql: ${TABLE}."TRUE_REVENUE" ;;
+    sql: ${TABLE}."REVENUE" ;;
+  }
+
+  dimension: system_ccg {
+    type: string
+    sql: ${TABLE}."system ccg" ;;
   }
 
   measure: count {
     type: count
     drill_fields: []
   }
-
-  measure: sum_of_revenue {
-    label: "Sum of Revenue (NET)"
-    type: sum
-    sql: ${TABLE}.TRUE_REVENUE ;;
-    value_format_name: gbp
-  }
-
-
 }
