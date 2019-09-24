@@ -507,7 +507,6 @@ view: vw_credits_cases_w_salecodes {
     value_format_name: gbp
   }
 
-
 ##  measure: sum_of_date_diff {
 ##    label: "Sum of Date Differences"
 ##    type: number
