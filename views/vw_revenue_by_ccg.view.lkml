@@ -34,4 +34,11 @@ view: vw_revenue_by_ccg {
     type: count
     drill_fields: []
   }
+
+  measure: sum_of_revenue {
+     type: sum
+      sql: ${TABLE}.REVENUE  ;;
+  }
+
+
 }
