@@ -250,7 +250,9 @@ view: vw_credits_w_salecodes_only {
   }
 
   measure: count {
-    type: count
+    label: "Count of Credits"
+    type: count_distinct
+    sql: ${TABLE}.CNOTE_KEY ;;
     drill_fields: [customer_name, case_owner_full_name]
   }
 }
