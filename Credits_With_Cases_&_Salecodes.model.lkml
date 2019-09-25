@@ -2,7 +2,7 @@ connection: "db"
 
 # include all the views
 include: "*.view"
-
+include: "/views/vw_credits_w_salecodes_only.view"
 
 datagroup: credits_w_cases_w_salecodes_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -26,5 +26,7 @@ join: aged_debt_view {
   relationship: one_to_one
   sql_on: ${aged_debt_view.cust_key} = ${vw_credits_cases_w_salecodes.customer_account_key}  ;;
 }
+
+
 
 }
