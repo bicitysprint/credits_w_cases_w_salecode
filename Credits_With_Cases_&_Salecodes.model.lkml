@@ -27,6 +27,11 @@ join: aged_debt_view {
   sql_on: ${aged_debt_view.cust_key} = ${vw_credits_cases_w_salecodes.customer_account_key}  ;;
 }
 
+join: vw_credits_w_salecodes_only {
+  view_label: "Credits Without Case Data"
+  relationship: one_to_one
+  sql_on: ${vw_credits_cases_w_salecodes.customer_account_key} = ${vw_credits_w_salecodes_only.customer_account_key} and ${vw_credits_cases_w_salecodes.cnote_key} = ${vw_credits_w_salecodes_only.cnote_key} ;;
 
+}
 
 }
