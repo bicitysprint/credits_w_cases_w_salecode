@@ -47,7 +47,7 @@ view: vw_credits_w_salecodes_only {
   }
 
   dimension: cnote_key {
-    type: number
+    type: string
     sql: ${TABLE}."CNOTE_KEY" ;;
   }
 
