@@ -117,7 +117,7 @@ view: vw_credits_w_salecodes_only {
 
   dimension: f_desc {
     type: string
-    sql: sql: case
+    sql: case
     when ${TABLE}."F_DESC" = 'PLAT+' then 'Platinum Plus'
     when ${TABLE}."F_DESC" = 'PEARL' then 'Pearl'
     when ${TABLE}."F_DESC" = 'PLATINUM' then 'Platinum'
