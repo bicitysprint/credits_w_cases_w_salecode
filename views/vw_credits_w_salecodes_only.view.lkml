@@ -117,7 +117,15 @@ view: vw_credits_w_salecodes_only {
 
   dimension: f_desc {
     type: string
-    sql: ${TABLE}."F_DESC" ;;
+    sql: sql: case
+    when ${TABLE}."F_DESC" = 'PLAT+' then 'Platinum Plus'
+    when ${TABLE}."F_DESC" = 'PEARL' then 'Pearl'
+    when ${TABLE}."F_DESC" = 'PLATINUM' then 'Platinum'
+    when ${TABLE}."F_DESC" = 'GOLD' then 'Gold'
+    when ${TABLE}."F_DESC" = 'GOLD+' then 'Gold Plus'
+    when ${TABLE}."F_DESC" = 'PLATINUM MINUS' then 'Platinum Minus'
+    else ${TABLE}."F_DESC"
+    END ;;
   }
 
   dimension: g_desc {
