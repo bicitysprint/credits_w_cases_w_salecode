@@ -263,4 +263,14 @@ view: vw_credits_w_salecodes_only {
     sql: ${TABLE}.CNOTE_KEY ;;
     drill_fields: [customer_account_key, customer_name, cnote_key, case_owner_full_name]
   }
+
+  measure: sum {
+    label: "Sum of Credit Note Value (NET)"
+    type: sum
+    sql: ${TABLE}.CREDIT_NET_AMOUNT ;;
+    value_format_name: gbp
+    drill_fields: [customer_name, case_owner_full_name, cnote_key, credit_note_date, credit_net_amount]
+  }
+
+
 }
