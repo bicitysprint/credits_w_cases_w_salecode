@@ -92,6 +92,7 @@ view: vw_credits_w_salecodes_only {
   }
 
   dimension: customer_key {
+    hidden: yes
     type: string
     sql: ${TABLE}."CUSTOMER_KEY" ;;
   }
@@ -266,11 +267,11 @@ view: vw_credits_w_salecodes_only {
   }
 
   measure: sum {
-    label: "Sum of Credit Note Value_(NET)"
+    label: "Sum of Credit Value"
     type: sum
     sql: ${TABLE}.CREDIT_NET_AMOUNT ;;
     value_format_name: gbp
-    drill_fields: [customer_name, case_owner_full_name, cnote_key, credit_note_date, credit_net_amount]
+    drill_fields: []
   }
 
 
