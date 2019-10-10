@@ -47,6 +47,7 @@ view: vw_credits_w_salecodes_only {
   }
 
   dimension: cnote_key {
+    primary_key: yes
     type: string
     sql: ${TABLE}."CNOTE_KEY" ;;
   }
@@ -269,16 +270,16 @@ view: vw_credits_w_salecodes_only {
   measure: sum {
     label: "Sum of Credit Value"
     type: sum
-    sql: ${TABLE}.CREDIT_NET_AMOUNT ;;
+    sql: ${credit_net_amount} ;;
     value_format_name: gbp
     drill_fields: []
   }
 
-  measure: sum_of_credits  {
-    type: sum
-    sql: ${TABLE}.CREDITS ;;
-    value_format_name: gbp
-  }
+##  measure: sum_of_credits  {
+##    type: sum
+##    sql: ${credits} ;;
+##    value_format_name: gbp
+##  }
 
 
 }
