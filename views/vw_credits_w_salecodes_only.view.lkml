@@ -266,7 +266,7 @@ view: vw_credits_w_salecodes_only {
   }
 
   measure: sum {
-    label: "Sum of Credit Note Value (NET)"
+    label: "Sum of Credit Note Value_(NET)"
     type: sum
     sql: ${TABLE}.CREDIT_NET_AMOUNT ;;
     value_format_name: gbp
