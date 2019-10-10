@@ -489,7 +489,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Count of Cases"
     sql: ${TABLE}.CASE_ID ;;
     type: count_distinct
-    drill_fields: [customer_account_key, customer_name, case_owner_full_name, case_number, true_created_date, case_id, subject_, status]
+    drill_fields: [customer_account_key, customer_name, case_owner_full_name, case_number, true_created_date, case_id, reason, subject_, status]
   }
 
   measure: sum {
