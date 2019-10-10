@@ -1,4 +1,5 @@
 view: vw_credits_w_salecodes_only {
+  label: "Credits With Sales Only"
   sql_table_name: CC.VW_CREDITS_W_SALECODES_ONLY ;;
 
   dimension: amt_1 {
