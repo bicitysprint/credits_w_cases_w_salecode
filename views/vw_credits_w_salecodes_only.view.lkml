@@ -274,5 +274,11 @@ view: vw_credits_w_salecodes_only {
     drill_fields: []
   }
 
+  measure: sum_of_credits  {
+    type: sum
+    sql: ${TABLE}.CREDITS ;;
+    value_format_name: gbp
+  }
+
 
 }
