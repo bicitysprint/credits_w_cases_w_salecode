@@ -497,7 +497,7 @@ view: vw_credits_cases_w_salecodes {
     type: sum
     sql: ${TABLE}.CREDIT_NET_AMOUNT ;;
     value_format_name: gbp
-    drill_fields: [customer_name, case_owner_full_name, cnote_key, credit_note_date_date, credit_net_amount]
+    drill_fields: [customer_account_key, customer_name, case_owner_full_name, cnote_key, credit_note_date_date, credit_net_amount]
   }
 
   measure: sum_of_invoices {
