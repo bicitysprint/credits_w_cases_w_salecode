@@ -444,7 +444,6 @@ view: vw_credits_cases_w_salecodes {
     label: "Case Status"
     type: string
     sql: ${TABLE}."Status" ;;
-    drill_fields: [customer_account_key, customer_name, case_id, case_number, case_owner_full_name, reason]
   }
 
   dimension: subject_ {
