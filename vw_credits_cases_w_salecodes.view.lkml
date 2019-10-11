@@ -34,7 +34,7 @@ view: vw_credits_cases_w_salecodes {
   dimension: case_number {
     type: string
     sql:  case
-          when ${TABLE}."CASE_NUMBER" is null then "SUBJECT"
+          when ${TABLE}."CASE_NUMBER" IS NULL then ${TABLE}."SUBJECT"
     else ${TABLE}."CASE_NUMBER" ;;
   }
 
