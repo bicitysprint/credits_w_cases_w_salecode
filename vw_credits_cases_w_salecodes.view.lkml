@@ -33,7 +33,9 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: case_number {
     type: string
-    sql: ${TABLE}."CASE_NUMBER" ;;
+    sql:  case
+          when ${TABLE}."CASE_NUMBER" is null then "SUBJECT"
+    else ${TABLE}."CASE_NUMBER" ;;
   }
 
   dimension: case_owner_full_name {
