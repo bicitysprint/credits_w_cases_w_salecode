@@ -146,10 +146,32 @@ view: vw_credits_w_salecodes_only {
 
   dimension: ind_type {
     type: string
-    sql: ${TABLE}."IND_TYPE" ;;
+    sql: case
+         when ${TABLE}."IND_TYPE" = '0' or "IND_TYPE" = '501' or "IND_TYPE" = '3PL' or "IND_TYPE" = 'credit card' or "IND_TYPE" = 'CreditCard' or "IND_TYPE" = 'Tobeupdated'
+         or "IND_TYPE" = 'Activities of households as employers; undifferentiated goods- and services-prod' or "IND_TYPE" = 'DIY GardenCentre' or "IND_TYPE" = 'Fitness Wellbeing'
+         or "IND_TYPE" = 'Activities of extraterritorial organisations and bodies' or "IND_TYPE" = 'Consumer PersonalAccount' or "IND_TYPE" = 'Mining and Quarrying'
+         or "IND_TYPE" = 'Water supply, sewerage, waste management and remediation activities' or "IND_TYPE" = 'Agriculture, Forestry and Fishing' or "IND_TYPE" = 'Environment Waste'  then 'Other'
+         when ${TABLE}."IND_TYPE" = 'FInancialServices' or "IND_TYPE" = 'Financial and insurance activities' or "IND_TYPE" = 'FM'  or "IND_TYPE" = 'Accountancy' then 'Financial Services'
+         when ${TABLE}."IND_TYPE" = 'Industrial And BusinessSupplies' or "IND_TYPE" = 'Industrial BusinessSupplies' or "IND_TYPE" = 'Electricity, gas, steam and air conditioning supply' then 'Industrial Business Supplies'
+         when ${TABLE}."IND_TYPE" = 'Manufacturing/Industrial' or "IND_TYPE" = 'Manufacturing' or "IND_TYPE" = 'Consumables' or "IND_TYPE" = 'Furnishing' then 'Manufacturing'
+         when ${TABLE}."IND_TYPE" = 'Wholesale and retail trade; repair of motor vehicles and motorcycles' or "IND_TYPE" = 'Retail Wholesale' or "IND_TYPE" = 'Fashion'
+         or "IND_TYPE" = 'Toys Games' then 'Retail'
+         when ${TABLE}."IND_TYPE" = 'Transportation and storage' or "IND_TYPE" = 'Transport Logistics' or "IND_TYPE" = 'RailNetwork' then 'Transport'
+         when ${TABLE}."IND_TYPE" = 'Public administration and defence; compulsory social security' or "IND_TYPE" = 'Public Sector' or "IND_TYPE" = 'LocalGovernment' then 'Public'
+         when ${TABLE}."IND_TYPE" = 'Media' or "IND_TYPE" = 'Arts, entertainment and recreation' or "IND_TYPE" = 'Printing' or "IND_TYPE" = 'Musics Media' then 'Arts & Media'
+         when ${TABLE}."IND_TYPE" = 'Electricals' or "IND_TYPE" = 'Utilities Petrochemical' then 'Energy'
+         when ${TABLE}."IND_TYPE" = 'NHS' or "IND_TYPE" = 'Human health and social work activities' then 'Medical & Social Work'
+         when ${TABLE}."IND_TYPE" = 'Human health and social work activities' or "IND_TYPE" = 'BusinessService Consultancy' then 'HR & Consultancy'
+         when ${TABLE}."IND_TYPE" = 'Information and communication' or "IND_TYPE" = 'Technology' or "IND_TYPE" = 'Telecommunications' then 'Information & Technology'
+         when ${TABLE}."IND_TYPE" = 'Administrative and support service activities' then 'Admin & Support Services'
+         when ${TABLE}."IND_TYPE" = 'Professional, scientific and technical activities' or "IND_TYPE" = 'Research Development' or "IND_TYPE" = 'Other service activities' then 'Professional Services'
+         when ${TABLE}."IND_TYPE" = 'Travel Tourism' or "IND_TYPE" = 'Baggage' then 'Travel'
+         else ${TABLE}."IND_TYPE"
+         END  ;;
   }
 
   dimension: industry {
+    hidden: yes
     type: string
     sql: ${TABLE}."Industry" ;;
   }
