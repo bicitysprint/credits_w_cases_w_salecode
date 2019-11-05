@@ -85,7 +85,7 @@ view: vw_credits_w_salecodes_only {
   dimension: cs_credit_controller_name__c {
     type: string
     sql: case
-    when ${TABLE}."CS_Credit_Controller_Name__c" = NULL then 'CS Account'
+    when ${TABLE}."CS_Credit_Controller_Name__c" IS NULL then 'CS Account'
     else ${TABLE}."CS_Credit_Controller_Name__c"
     END ;;
   }
