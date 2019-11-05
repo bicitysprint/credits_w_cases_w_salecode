@@ -84,7 +84,10 @@ view: vw_credits_w_salecodes_only {
 
   dimension: cs_credit_controller_name__c {
     type: string
-    sql: ${TABLE}."CS_Credit_Controller_Name__c" ;;
+    sql: case
+    when ${TABLE}."CS_Credit_Controller_Name__c" = NULL then 'CS Account'
+    else ${TABLE}."CS_Credit_Controller_Name__c"
+    END ;;
   }
 
   dimension: customer_account_key {
