@@ -160,7 +160,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Customer Account Number"
     type: string
     sql: ${TABLE}."CUSTOMER_ACCOUNT_KEY" ;;
-  drill_fields: [customer_account_key, customer_name, clean_crednote_inv_date_date, true_created_date]
+  drill_fields: [customer_account_key, customer_name, true_created_date]
   }
 
   dimension: customer_key {
