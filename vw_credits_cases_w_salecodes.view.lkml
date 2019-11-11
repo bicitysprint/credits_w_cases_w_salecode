@@ -401,7 +401,10 @@ view: vw_credits_cases_w_salecodes {
   dimension: reason {
     label: "Case Reason"
     type: string
-    sql: ${TABLE}."Reason" ;;
+    sql: case
+         when ${TABLE}."Reason" IS NULL then 'Not Supplied'
+         else ${TABLE}."Reason"
+         END  ;;
   }
 
   dimension: sales_code_e {
