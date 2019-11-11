@@ -402,7 +402,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Case Reason"
     type: string
     sql: case
-         when ${TABLE}."Reason" IS NULL then 'Not Supplied'
+         when ${TABLE}."Reason" IS NULL then 'N/A - None Given'
          else ${TABLE}."Reason"
          END  ;;
   }
