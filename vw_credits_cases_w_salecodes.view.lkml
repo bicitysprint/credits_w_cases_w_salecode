@@ -107,9 +107,7 @@ view: vw_credits_cases_w_salecodes {
       year
     ]
     sql: ${TABLE}."CreatedDate" ;;
-
-
-    drill_fields: [created_month,  case_number, cs_credit_controller_name__c, reason]
+##    drill_fields: [created_month, case_number, cs_credit_controller_name__c, reason]
   }
 
   dimension_group: credit_note_date {
