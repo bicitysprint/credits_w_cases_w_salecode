@@ -147,7 +147,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: cs_credit_controller_name__c {
-    label: "Credit_Controller_Name"
+    label: "  Credit_Controller_Name"
     type: string
     drill_fields: [cs_credit_controller_name__c]
     link: {
