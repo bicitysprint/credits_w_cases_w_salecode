@@ -29,7 +29,7 @@ view: vw_credits_cases_w_salecodes {
   dimension: case_id {
     type: string
     sql: ${TABLE}."CASE_ID" ;;
-    drill_fields: [case_owner_full_name, reason, description_]
+    drill_fields: [case_fields*]
   }
 
   dimension: case_number {
@@ -535,5 +535,18 @@ view: vw_credits_cases_w_salecodes {
       value_format_name: decimal_2
       sql: ${date_diff} ;;
     }
+
+set: case_fields  {
+  fields: [
+    case_id,
+    case_owner_full_name,
+    case_number,
+    status,
+    reason,
+    description_
+  ]
+}
+
+
 
 }
