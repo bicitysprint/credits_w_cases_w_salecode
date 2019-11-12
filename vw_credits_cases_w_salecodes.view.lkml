@@ -153,7 +153,7 @@ view: vw_credits_cases_w_salecodes {
     when ${TABLE}."CS_Credit_Controller_Name__c" IS NULL then 'CS Account'
     else ${TABLE}."CS_Credit_Controller_Name__c"
     END ;;
-    drill_fields: [cs_credit_controller_name__c, reason, description_]
+    drill_fields: [cs_credit_controller_name__c, case_fields*]
 ##    link: {
 ##      label: "See Case Details for {{value}}"
 ##      url: "/dashboards/300?CS%20Credit%20Controller%20Name%20%20c={{value}}"
