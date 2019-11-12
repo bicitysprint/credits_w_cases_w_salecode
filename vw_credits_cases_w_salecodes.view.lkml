@@ -152,7 +152,7 @@ view: vw_credits_cases_w_salecodes {
     drill_fields: [cs_credit_controller_name__c]
     link: {
       label: "See Case Details for {{value}}"
-      url: "/dashboards/300?Credit_Controller={{value}}"
+      url: "/dashboards/300?Credit%20Controller={{value}}"
       icon_url: "http://looker.com/favicon.ico"
     }
     sql: case
