@@ -147,18 +147,18 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: cs_credit_controller_name__c {
-    label: "  Credit_Controller_Name"
+    label: "Credit_Controller_Name"
     type: string
-    drill_fields: [cs_credit_controller_name__c]
-    link: {
-      label: "See Case Details for {{value}}"
-      url: "/dashboards/300?Credit%20Controller%20Name={{value}}"
-      icon_url: "http://looker.com/favicon.ico"
-    }
     sql: case
-         when ${TABLE}."CS_Credit_Controller_Name__c" IS NULL then 'CS Account'
-         else ${TABLE}."CS_Credit_Controller_Name__c"
-         END ;;
+    when ${TABLE}."CS_Credit_Controller_Name__c" IS NULL then 'CS Account'
+    else ${TABLE}."CS_Credit_Controller_Name__c"
+    END ;;
+    drill_fields: [cs_credit_controller_name__c, reason, description_]
+##    link: {
+##      label: "See Case Details for {{value}}"
+##      url: "/dashboards/300?CS%20Credit%20Controller%20Name%20%20c={{value}}"
+##      icon_url: "http://looker.com/favicon.ico"
+##    }
   }
 
   dimension: customer_account_key {
