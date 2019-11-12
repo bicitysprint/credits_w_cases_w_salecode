@@ -33,6 +33,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: case_number {
+    hidden: yes
     type: string
     sql: ${TABLE}."CASE_NUMBER" ;;
   }
@@ -200,7 +201,10 @@ view: vw_credits_cases_w_salecodes {
   dimension: description_ {
     label: "Case Details"
     type: string
-    sql: ${TABLE}."DESCRIPTION_" ;;
+    sql: case
+         when ${TABLE}."DESCRIPTION_" IS NULL then 'No Details Provided'
+         else ${TABLE}."DESCRIPTION_"
+         END ;;
   }
 
   dimension: e_desc {
