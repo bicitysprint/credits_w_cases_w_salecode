@@ -542,6 +542,19 @@ view: vw_credits_cases_w_salecodes {
       sql: ${date_diff} ;;
     }
 
+  measure: avg_of_days_to_cred {
+    label: "Avg Number of Days From Query To Credit"
+    type: average
+    filters: {
+      field: date_diff_creds
+      value: ">=0"
+    }
+    value_format_name: decimal_2
+    sql: ${date_diff_creds} ;;
+  }
+
+
+##---SETS---##
 set: case_fields  {
   fields: [
     case_id,
