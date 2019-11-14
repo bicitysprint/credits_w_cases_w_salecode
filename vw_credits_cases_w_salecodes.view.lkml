@@ -44,7 +44,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension_group: clean_crednote_inv_date {
-    label: "Credit Note Related Invoice or Job Date"
+    label: "Credit Note Related Invoice Date"
     type: time
     timeframes: [
       raw,
@@ -60,7 +60,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: clean_crednote_inv_number {
-    label: "Credit Note Related Invoice or Job Number"
+    label: "Credit Note Related Invoice Number"
     type: string
     sql: ${TABLE}."CLEAN_CREDNOTE_INV_NUMBER" ;;
   }
@@ -202,6 +202,12 @@ view: vw_credits_cases_w_salecodes {
     label: "Days Until Query Raised"
     type: number
     sql: DATEDIFF(day, ${clean_crednote_inv_date_date}, ${true_created_date}) ;;
+  }
+
+  dimension: date_diff_creds {
+    label: "Days From Query to Credit"
+    type: number
+    sql: DATEDIFF(day, ${true_created_date}, ${credit_note_date_date}) ;;
   }
 
   dimension: description_ {
