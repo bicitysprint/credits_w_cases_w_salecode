@@ -55,6 +55,7 @@ view: vw_credits_w_salecodes_only {
   dimension: credit_net_amount {
     type: number
     sql: ${TABLE}."CREDIT_NET_AMOUNT" ;;
+    value_format_name: gbp
     drill_fields: [customer_account_key, customer_name, cnote_key, credit_net_amount]
   }
 
