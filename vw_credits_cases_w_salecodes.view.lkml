@@ -82,6 +82,7 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: cnote_key {
     label: "Credit Note Number"
+    primary_key: yes
     type: string
     sql: ${TABLE}."CNOTE_KEY" ;;
 
