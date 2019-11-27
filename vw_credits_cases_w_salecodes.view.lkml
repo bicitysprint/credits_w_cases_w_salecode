@@ -554,6 +554,13 @@ view: vw_credits_cases_w_salecodes {
     sql: ${date_diff_creds} ;;
   }
 
+##  measure: percent_of_creds_from_cases {
+##   label: "Percentage of Cases which became Credits"
+##   type: count_distinct
+##    sql: ${TABLE}.case_id ;;
+## }
+
+
 
 ##---SETS---##
 set: case_fields  {
