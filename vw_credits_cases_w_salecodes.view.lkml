@@ -203,7 +203,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Days Until Query Raised"
     type: number
     sql: DATEDIFF(day, ${clean_crednote_inv_date_date}, ${true_created_date}) ;;
-    drill_fields: [customer_account_key, customer_name, invoice_date, created_date, h_desc, g_desc, case_owner_full_name, case_id, reason]
+    drill_fields: [customer_name, h_desc, g_desc, case_owner_full_name, case_id, reason]
   }
 
   dimension: date_diff_creds {
