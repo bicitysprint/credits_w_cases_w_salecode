@@ -209,6 +209,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Days From Query to Credit"
     type: number
     sql: DATEDIFF(day, ${true_created_date}, ${credit_note_date_date}) ;;
+    drill_fields: [customer_account_key, customer_name, invoice_date, created_date, h_desc, g_desc, case_owner_full_name, case_id, reason]
   }
 
   dimension: description_ {
@@ -516,7 +517,7 @@ view: vw_credits_cases_w_salecodes {
     type: sum
     sql: ${TABLE}.CREDIT_NET_AMOUNT ;;
     value_format_name: gbp
-    drill_fields: [customer_account_key, customer_name, case_owner_full_name, cnote_key, credit_note_date_date, credit_net_amount]
+    drill_fields: [credit_note_fields*]
   }
 
   measure: sum_of_invoices {
@@ -574,6 +575,15 @@ set: case_fields  {
   ]
 }
 
-
+set: credit_note_fields {
+  fields: [
+    customer_account_key,
+    customer_name,
+    case_owner_full_name,
+    cnote_key,
+    credit_note_date_date,
+    credit_net_amount
+  ]
+}
 
 }
