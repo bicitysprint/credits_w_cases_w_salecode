@@ -32,10 +32,9 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: case_number {
-    hidden: no
+    hidden: yes
     type: string
     sql: ${TABLE}."CASE_NUMBER" ;;
-    drill_fields: [case_id, description_, reason, case_owner_full_name]
   }
 
   dimension: case_owner_full_name {
@@ -389,6 +388,7 @@ view: vw_credits_cases_w_salecodes {
   dimension: original_case_number {
     type: string
     sql: ${TABLE}."ORIGINAL_CASE_NUMBER" ;;
+    drill_fields: [case_id, description_, reason, case_owner_full_name]
   }
 
   dimension: outstanding_amt {
