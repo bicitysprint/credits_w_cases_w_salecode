@@ -32,7 +32,7 @@ view: vw_credits_cases_w_salecodes {
   }
 
   dimension: case_number {
-    hidden: yes
+    hidden: no
     type: string
     sql: ${TABLE}."CASE_NUMBER" ;;
     drill_fields: [case_id, description_, reason, case_owner_full_name]
