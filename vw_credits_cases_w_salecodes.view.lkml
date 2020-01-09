@@ -388,7 +388,7 @@ view: vw_credits_cases_w_salecodes {
   dimension: original_case_number {
     type: string
     sql: ${TABLE}."ORIGINAL_CASE_NUMBER" ;;
-    drill_fields: [case_id, subject_, description_, reason, case_owner_full_name]
+    drill_fields: [case_fields*]
   }
 
   dimension: outstanding_amt {
@@ -566,11 +566,12 @@ view: vw_credits_cases_w_salecodes {
 ##---SETS---##
 set: case_fields  {
   fields: [
+    case_number,
     case_id,
     case_owner_full_name,
-    case_number,
     status,
     reason,
+    subject_,
     description_
   ]
 }
@@ -585,5 +586,6 @@ set: credit_note_fields {
     credit_net_amount
   ]
 }
+
 
 }
