@@ -388,7 +388,13 @@ view: vw_credits_cases_w_salecodes {
   dimension: original_case_number {
     type: string
     sql: ${TABLE}."ORIGINAL_CASE_NUMBER" ;;
-    drill_fields: [case_fields*]
+##    drill_fields: [case_fields*]
+    drill_fields: [vw_credits_cases_w_salecodes.original_case_number]
+    link: {
+      label: "See Case Details for {{value}}"
+      url: "/dashboards/318?Case%20Number={{value}}"
+      icon_url: "https://looker.com/favicon.ico"
+    }
   }
 
   dimension: outstanding_amt {
