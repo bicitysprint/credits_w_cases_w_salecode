@@ -153,12 +153,12 @@ view: vw_credits_cases_w_salecodes {
     when ${TABLE}."CS_Credit_Controller_Name__c" IS NULL then 'CS Account'
     else ${TABLE}."CS_Credit_Controller_Name__c"
     END ;;
-##    drill_fields: [cs_credit_controller_name__c, case_fields*]
-##    link: {
-##      label: "See Case Details for {{value}}"
-##      url: "/dashboards/300?CS%20Credit%20Controller%20Name%20%20c={{value}}"
-##      icon_url: "http://looker.com/favicon.ico"
-##    }
+   drill_fields: [cs_credit_controller_name__c, case_fields*]
+    link: {
+      label: "See Case Details for {{value}}"
+      url: "/dashboards/318?CS%20Credit%20Controller%20Name%20%20c={{value}}"
+      icon_url: "http://looker.com/favicon.ico"
+  }
   }
 
   dimension: customer_account_key {
@@ -389,12 +389,12 @@ view: vw_credits_cases_w_salecodes {
     type: string
     sql: ${TABLE}."ORIGINAL_CASE_NUMBER" ;;
 ##    drill_fields: [case_fields*]
-    drill_fields: [vw_credits_cases_w_salecodes.original_case_number]
-    link: {
-      label: "See Case Details for {{value}}"
-      url: "/dashboards/318?Case%20Number={{value}}"
-      icon_url: "https://looker.com/favicon.ico"
-    }
+##    drill_fields: [vw_credits_cases_w_salecodes.original_case_number]
+##    link: {
+##      label: "See Case Details for {{value}}"
+##      url: "/dashboards/318?Case%20Number={{value}}"
+##      icon_url: "https://looker.com/favicon.ico"
+##    }
   }
 
   dimension: outstanding_amt {
