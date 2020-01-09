@@ -566,10 +566,8 @@ view: vw_credits_cases_w_salecodes {
 ##---SETS---##
 set: case_fields  {
   fields: [
-    case_number,
     case_id,
     case_owner_full_name,
-    status,
     reason,
     subject_,
     description_
