@@ -224,6 +224,7 @@ view: vw_credits_cases_w_salecodes {
          when ${TABLE}."DESCRIPTION_" IS NULL then 'No Details Provided'
          else ${TABLE}."DESCRIPTION_"
          END ;;
+    drill_fields: [description_]
   }
 
   dimension: e_desc {
@@ -394,8 +395,9 @@ view: vw_credits_cases_w_salecodes {
   dimension: original_case_number {
     type: string
     sql: ${TABLE}."ORIGINAL_CASE_NUMBER" ;;
-    drill_fields: [case_fields*]
 
+
+##    drill_fields: [case_fields*]
 ##    drill_fields: [vw_credits_cases_w_salecodes.original_case_number]
 ##    link: {
 ##      label: "See Case Details for {{value}}"
@@ -579,7 +581,6 @@ view: vw_credits_cases_w_salecodes {
 ##---SETS---##
 set: case_fields  {
   fields: [
-    original_case_number,
     case_id,
     case_owner_full_name,
     reason,
