@@ -478,7 +478,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Case Status"
     type: string
     sql: ${TABLE}."Status" ;;
-    drill_fields: [subject_, description_]
+    drill_fields: [subject_]
   }
 
   dimension: subject_ {
