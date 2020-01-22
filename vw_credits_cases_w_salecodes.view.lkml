@@ -35,6 +35,7 @@ view: vw_credits_cases_w_salecodes {
     hidden: yes
     type: string
     sql: ${TABLE}."CASE_NUMBER" ;;
+    drill_fields: [case_fields*]
   }
 
   dimension: case_owner_full_name {
@@ -153,12 +154,17 @@ view: vw_credits_cases_w_salecodes {
     when ${TABLE}."CS_Credit_Controller_Name__c" IS NULL then 'CS Account'
     else ${TABLE}."CS_Credit_Controller_Name__c"
     END ;;
-   drill_fields: [cs_credit_controller_name__c, case_fields*]
-    link: {
-      label: "See Case Details for {{value}}"
-      url: "/dashboards/318?CS%20Credit%20Controller%20Name%20%20c={{value}}"
-      icon_url: "http://looker.com/favicon.ico"
-  }
+##    drill_fields: []
+##    link: {
+##      label: "See Case Details for {{value}}"
+##      url: "/dashboards/318?Controller%20Name%20For%20Cases={{value}}&Controller%20Name%20For%20Cases={{ _filters['credits_w_cases_w_salecodes.cs_credit_controller_name__c']}}"
+##      icon_url: "https://cecil.citysprint.co.uk/favicon.ico"
+##    }
+##    link: {
+##      label: "See Case Details for {{value}}"
+##      url: "/dashboards/318?CS%20Credit%20Controller%20Name%20%20c={{value}}"
+##      icon_url: "http://looker.com/favicon.ico"
+##  }
   }
 
   dimension: customer_account_key {
@@ -388,6 +394,7 @@ view: vw_credits_cases_w_salecodes {
   dimension: original_case_number {
     type: string
     sql: ${TABLE}."ORIGINAL_CASE_NUMBER" ;;
+
 ##    drill_fields: [case_fields*]
 ##    drill_fields: [vw_credits_cases_w_salecodes.original_case_number]
 ##    link: {
