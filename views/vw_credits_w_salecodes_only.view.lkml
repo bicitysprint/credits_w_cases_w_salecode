@@ -139,7 +139,10 @@ view: vw_credits_w_salecodes_only {
   dimension: g_desc {
     label: "Account Manager"
     type: string
-    sql: ${TABLE}."G_DESC" ;;
+    sql: case
+    when ${TABLE}."G_DESC" IS NULL then 'NO ACCT MANAGER'
+    else ${TABLE}."G_DESC"
+    END ;;
   }
 
   dimension: h_desc {
