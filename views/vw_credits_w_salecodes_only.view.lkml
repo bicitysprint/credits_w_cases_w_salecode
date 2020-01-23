@@ -108,6 +108,7 @@ view: vw_credits_w_salecodes_only {
   }
 
   dimension: d_desc {
+    label: "Service Centre"
     type: string
     sql: ${TABLE}."D_DESC" ;;
   }
@@ -136,11 +137,13 @@ view: vw_credits_w_salecodes_only {
   }
 
   dimension: g_desc {
+    label: "Account Manager"
     type: string
     sql: ${TABLE}."G_DESC" ;;
   }
 
   dimension: h_desc {
+    label: "Credit Controller"
     type: string
     sql: ${TABLE}."H_DESC" ;;
   }
