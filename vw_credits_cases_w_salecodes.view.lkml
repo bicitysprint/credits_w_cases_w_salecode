@@ -398,7 +398,7 @@ view: vw_credits_cases_w_salecodes {
   drill_fields: [vw_credits_cases_w_salecodes.original_case_number]
     link: {
     label: "See Case Details for {{value}}"
-    url: "/dashboards/300?Case%20Details%20Dash={{value}}"
+    url: "/dashboards/342?Case%20Details%20Dash={{value}}"
     icon_url: "https://looker.com/favicon.ico"
     }
   }
