@@ -550,10 +550,6 @@ view: vw_credits_cases_w_salecodes {
     measure: avg_of_date_diff {
       label: "Avg Number of Days To Query"
       type: average
-      filters: {
-        field: date_diff
-        value: ">=0"
-        }
       value_format_name: decimal_2
       sql: ${date_diff} ;;
     }
