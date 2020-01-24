@@ -224,6 +224,7 @@ view: vw_credits_cases_w_salecodes {
          when ${TABLE}."DESCRIPTION_" IS NULL then 'No Details Provided'
          else ${TABLE}."DESCRIPTION_"
          END ;;
+    drill_fields: [description_]
   }
 
   dimension: e_desc {
