@@ -483,7 +483,7 @@ view: vw_credits_cases_w_salecodes {
     label: "Case Subject"
     type: string
     sql: ${TABLE}."SUBJECT_" ;;
-    drill_fields: [subject_]
+##    drill_fields: [subject_]
   }
 
   dimension: supplied_name {
@@ -550,7 +550,7 @@ view: vw_credits_cases_w_salecodes {
     measure: avg_of_date_diff {
       label: "Avg Number of Days To Query"
       type: average
-##      value_format_name: decimal_2
+      value_format_name: decimal_2
       sql: ${date_diff} ;;
     }
 
