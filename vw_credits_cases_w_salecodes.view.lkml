@@ -141,6 +141,15 @@ view: vw_credits_cases_w_salecodes {
     value_format_name: gbp
   }
 
+  dimension: credit_raised {
+    type: yesno
+    sql: if (
+      ${credit_net_amount} > 0, 'Yes'
+      ${credit_net_amount} is NULL, 'No'  ;;
+  }
+
+
+
   dimension: cs_ccg__c {
     label: "CCG"
     type: string
