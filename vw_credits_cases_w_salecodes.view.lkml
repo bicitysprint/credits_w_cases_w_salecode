@@ -144,9 +144,7 @@ view: vw_credits_cases_w_salecodes {
   dimension: credit_raised {
     type: yesno
     sql: if (
-      ${credit_net_amount} > 0, then 'Yes'
-      else 'No'
-      END ;;
+      ${credit_net_amount} > 0, yes, no) ;;
   }
 
 
