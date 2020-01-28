@@ -143,11 +143,11 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: credit_raised {
     type: yesno
-    sql: if (
-      ${credit_net_amount} > 0, yes, no) ;;
-  }
-
-
+    sql: case
+    when ${TABLE}."CREDIT_NET_AMOUNT" is null, then 'no'
+    else yes
+    END ;;
+   }
 
   dimension: cs_ccg__c {
     label: "CCG"
