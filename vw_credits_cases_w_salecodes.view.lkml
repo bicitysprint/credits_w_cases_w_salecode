@@ -144,8 +144,8 @@ view: vw_credits_cases_w_salecodes {
   dimension: credit_raised {
     type: string
     sql: case
-    when ${TABLE}."CREDIT_NET_AMOUNT" is null then 'no'
-    else 'yes'
+    when ${TABLE}."CREDIT_NET_AMOUNT" is null then 'No'
+    else 'Yes'
     END ;;
    }
 
