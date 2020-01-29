@@ -89,6 +89,13 @@ view: vw_credits_cases_w_salecodes {
 ##    drill_fields: [customer_name, d_desc, g_desc, cs_credit_controller_name__c, reason, cnote_key, credit_note_date_date]
   }
 
+  dimension: consol_code {
+    type: string
+    sql: ${TABLE}."CONSOL_CODE" ;;
+  }
+
+
+
   dimension: created_by_id {
     label: "Case Created By ID"
     type: string
