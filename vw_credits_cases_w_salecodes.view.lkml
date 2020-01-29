@@ -568,6 +568,7 @@ view: vw_credits_cases_w_salecodes {
       type: average
       value_format_name: decimal_0
       sql: ${date_diff} ;;
+      drill_fields: [customer_account_key, invoice_date, true_created_date, avg_of_date_diff]
     }
 
   measure: avg_of_days_to_cred {
