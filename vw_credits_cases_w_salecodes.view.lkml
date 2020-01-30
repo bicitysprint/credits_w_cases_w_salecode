@@ -450,7 +450,7 @@ view: vw_credits_cases_w_salecodes {
          when ${TABLE}."Reason" IS NULL then 'N/A - None Given'
          else ${TABLE}."Reason"
          END  ;;
-  drill_fields: [case_reason_fields*]
+##  drill_fields: [case_reason_fields*]
   }
 
   dimension: sales_code_e {
@@ -601,16 +601,16 @@ set: case_fields  {
   ]
 }
 
-set: case_reason_fields {
-  fields: [
-    true_created_date,
-    customer_key,
-    original_case_number,
-    reason,
-    subject_,
-    description_
-  ]
-}
+##set: case_reason_fields {
+##  fields: [
+##    true_created_date,
+##    customer_key,
+##    original_case_number,
+##    reason,
+##    subject_,
+##    description_
+##  ]
+##}
 
 
 set: credit_note_fields {
