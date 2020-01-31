@@ -52,9 +52,10 @@ view: vw_credits_w_salecodes_only {
     sql: ${TABLE}."CNOTE_KEY" ;;
   }
 
-  dimension: consol_code {
+  dimension: cs_consol_code {
+    label: "Consol Code"
     type: string
-    sql: ${TABLE}."CONSOL_CODE" ;;
+    sql: ${TABLE}."CS_CONSOL_CODE" ;;
   }
 
   dimension: credit_net_amount {
