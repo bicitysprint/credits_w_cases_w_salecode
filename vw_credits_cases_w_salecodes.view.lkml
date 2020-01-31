@@ -94,8 +94,6 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."CONSOL_CODE" ;;
   }
 
-
-
   dimension: created_by_id {
     label: "Case Created By ID"
     type: string
