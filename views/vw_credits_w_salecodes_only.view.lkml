@@ -124,6 +124,11 @@ view: vw_credits_w_salecodes_only {
     sql: ${TABLE}."DATE_AND_INVOICE_REF" ;;
   }
 
+  dimension: department {
+    type: string
+    sql: ${TABLE}."DEPARTMENT" ;;
+  }
+
   dimension: e_desc {
     type: string
     sql: ${TABLE}."E_DESC" ;;
@@ -291,6 +296,21 @@ view: vw_credits_w_salecodes_only {
   dimension: sic_desc {
     type: string
     sql: ${TABLE}."SicDesc" ;;
+  }
+
+  dimension: status {
+    label: "Case Status"
+    type: string
+    sql: ${TABLE}."Status" ;;
+  }
+
+  dimension: title {
+    type: string
+    sql: case
+          when ${TABLE}."TITLE" = 'Territory Manager' then 'Business Development TM'
+          when ${TABLE}."TITLE" = 'Business Development AD' then 'Business Development Account Director'
+          else ${TABLE}."TITLE"
+          END ;;
   }
 
   dimension: transaction_code {
