@@ -233,7 +233,7 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: department {
     type: string
-    sql: ${TABLE}."Department" ;;
+    sql: ${TABLE}."DEPARTMENT" ;;
   }
 
   dimension: description_ {
