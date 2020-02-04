@@ -193,6 +193,7 @@ view: vw_credits_w_salecodes_only {
          when ${TABLE}."IND_TYPE_2" = 'Travel Tourism' or "IND_TYPE_2" = 'Baggage' then 'Travel'
          else ${TABLE}."IND_TYPE_2"
          END  ;;
+    drill_fields: [customer_account_key, count]
   }
 
   dimension: industry {
