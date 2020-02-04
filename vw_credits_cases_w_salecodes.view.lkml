@@ -499,6 +499,11 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."Status" ;;
   }
 
+  dimension: sub_department {
+    type: string
+    sql: ${TABLE}."SUB_DEPARTMENT" ;;
+  }
+
   dimension: subject_ {
     label: "Case Subject"
     type: string
