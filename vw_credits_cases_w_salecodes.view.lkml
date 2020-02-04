@@ -231,6 +231,11 @@ view: vw_credits_cases_w_salecodes {
     sql: DATEDIFF(day, ${true_created_date}, ${credit_note_date_date}) ;;
   }
 
+  dimension: department {
+    type: string
+    sql: ${TABLE}."DEPARTMENT" ;;
+  }
+
   dimension: description_ {
     label: "Case Details"
     type: string
@@ -507,6 +512,11 @@ view: vw_credits_cases_w_salecodes {
     sql: ${TABLE}."SuppliedName" ;;
   }
 
+  dimension: title {
+    type: string
+    sql: ${TABLE}."TITLE" ;;
+  }
+
   dimension: transaction_code {
     type: string
     sql: ${TABLE}."TRANSACTION_CODE" ;;
@@ -525,6 +535,12 @@ view: vw_credits_cases_w_salecodes {
       year
     ]
     sql: ${TABLE}."TRUE_CREATED_DATE" ;;
+  }
+
+  dimension: user_status {
+    label: "User Status"
+    type: string
+    sql: ${TABLE}."USER_STATUS" ;;
   }
 
   measure: count_of_credits {
