@@ -29,7 +29,7 @@ view: vw_credits_w_salecodes_only {
   dimension: case_owner_full_name {
     type: string
     sql: ${TABLE}."CASE_OWNER_FULL_NAME" ;;
-    drill_fields: [customer_key, clean_crednote_inv_date, cnote_key, clean_crednote_inv_number, credit_net_amount]
+    drill_fields: [customer_account_key, cnote_key, clean_crednote_inv_number, credit_net_amount]
   }
 
   dimension: clean_crednote_inv_date {
