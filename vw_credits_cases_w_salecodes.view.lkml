@@ -519,7 +519,10 @@ view: vw_credits_cases_w_salecodes {
 
   dimension: title {
     type: string
-    sql: ${TABLE}."TITLE" ;;
+    sql: case
+    when ${TABLE}."TITLE" = 'Territory Manager' then '  Business Development TM'
+    else ${TABLE}."TITLE"
+    END ;;
   }
 
   dimension: transaction_code {
