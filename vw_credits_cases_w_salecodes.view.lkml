@@ -520,7 +520,8 @@ view: vw_credits_cases_w_salecodes {
   dimension: title {
     type: string
     sql: case
-    when ${TABLE}."TITLE" = 'Territory Manager' then '  Business Development TM'
+    when ${TABLE}."TITLE" = 'Territory Manager' then 'Business Development TM'
+    when ${TABLE}."TITLE" = 'Business Development AD' then 'Business Development Account Director'
     else ${TABLE}."TITLE"
     END ;;
   }
