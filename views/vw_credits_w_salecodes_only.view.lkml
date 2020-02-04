@@ -126,7 +126,13 @@ view: vw_credits_w_salecodes_only {
 
   dimension: department {
     type: string
-    sql: ${TABLE}."DEPARTMENT" ;;
+    sql: case
+    when ${TABLE}."DEPARTMENT" = 'Business Development London' then 'London'
+    when ${TABLE}."DEPARTMENT" = 'Business Development North' then 'North'
+    when ${TABLE}."DEPARTMENT" = 'Business Development South' then 'South'
+    when ${TABLE}."DEPARTMENT" = 'Business Development' then 'Support'
+    else ${TABLE}."DEPARTMENT"
+    END ;;
   }
 
   dimension: e_desc {
